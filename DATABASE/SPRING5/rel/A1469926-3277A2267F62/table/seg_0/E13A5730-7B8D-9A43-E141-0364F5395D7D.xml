@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E13A5730-7B8D-9A43-E141-0364F5395D7D" name="TABLE_REPLY">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:25:11 UTC</createdTime>
+<commentInRDBMS><![CDATA[댓글관리테이블]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RNO" id="04B17D03-4750-BA7B-3D46-9567A61A80FC">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:26:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[댓글고유번호(자동증가AI)]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPLY_TEXT" id="450F9031-157A-91FD-CF23-C66C402496C8">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:36:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[댓글내용]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPLYER" id="D51C7D34-C1F7-E6E9-D81D-8A1B4460E255">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:37:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[댓글작성자ID]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REG_DATE" id="5C16C6F0-7CAD-3D2D-4B8E-9E248CB27B31">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:37:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[생성일]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUTDATE_DATE" id="F14DEA34-AE81-B734-D43F-6CDB2F7ECEC9">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:39:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정일]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TBL_BOARD_BNO" id="B837C27C-7EB9-6159-4A13-C43D1B8740AC">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:46:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[게시물관리고유값외래키]]></commentInRDBMS>
+<ownerDesignName>SPRING5</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="510235FB-275D-6AC1-80EE-7A758307E3F2" referredColumn="9F3D7AB7-21FA-9AF8-EDA2-DEAE53679DCC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="224C2A5C-0D9E-61A1-A922-700049F7FAFC" name="TABLE_REPLY_PK">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:40:02 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04B17D03-4750-BA7B-3D46-9567A61A80FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D055984-8521-2813-D971-9C5C4A17284D" name="TABLE_REPLY_TBL_BOARD_FK">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 03:47:22 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B837C27C-7EB9-6159-4A13-C43D1B8740AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
