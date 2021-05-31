@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TBL_MEMBER" directorySegmentName="seg_0" id="6B3DCE96-62CB-3C00-3D25-408B63ECAFFD">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+<schemaObject>F4F7C6BD-E236-E725-8F74-D41D16E94287</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>ADA56CCB-829C-E792-128B-395B6C49E0D3</segment>
+<tableSpace>4D758877-585E-A196-6368-66A2DDCF63DF</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="POINT" id="124D4EEA-0208-E519-5D08-8335A911E18A">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATE_DATE" id="205A0DC8-E87D-4D08-ACF3-9900E598782D">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_PW" id="4EB1C52B-8408-C6E6-927D-2A41EDC80477">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_ID" id="69D4A0BA-DD92-C37F-75A3-6F819F0C29EA">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENABLED" id="7672886F-6D87-BA8F-5A9A-86FD1D37F6C6">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REG_DATE" id="7D752E37-3D1D-9222-80D1-7EB44EE234DF">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="9069599F-4A2E-D0AC-F379-0FB402EEC8F0">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_NAME" id="97B94687-9734-782F-B811-5317398F10BD">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LEVELS" id="A23DC894-1899-5AD0-5780-ACAEC827DD52">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="TBL__PK" id="694672AC-6990-5D77-E5FB-252774F3B5FE">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+<schemaObject>F4F7C6BD-E236-E725-8F74-D41D16E94287</schemaObject>
+<segment>40BA3E52-5C34-EC38-A272-A1ED49FB4CC7</segment>
+<tableSpace>4D758877-585E-A196-6368-66A2DDCF63DF</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TBL__PK" id="B4DE1427-52E8-877E-7BD7-07015A18510F">
+<createdBy>Gukko</createdBy>
+<createdTime>2021-05-31 06:47:28 UTC</createdTime>
+<ownerDesignName>SPRING5</ownerDesignName>
+<segment>40BA3E52-5C34-EC38-A272-A1ED49FB4CC7</segment>
+<tableSpace>4D758877-585E-A196-6368-66A2DDCF63DF</tableSpace>
+<existingIndex>694672AC-6990-5D77-E5FB-252774F3B5FE</existingIndex>
+<indexSegment>40BA3E52-5C34-EC38-A272-A1ED49FB4CC7</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
