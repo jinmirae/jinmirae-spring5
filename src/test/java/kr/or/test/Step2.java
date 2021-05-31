@@ -65,7 +65,7 @@ class MemberService {
 		// 멤버서비스클래스에서 퍼블릿 접근제어로 회원정보를 출력하는 메서드 생성
 		// 향상된 for문을 사용합니다.
 		for(MemberVO member:members) {
-			System.out.println("회원의 이름은"+member.getName()
+			System.out.println(" 회원의 이름은"+member.getName()
 			+" 나이는"+member.getAge()
 			+" 폰번호는"+member.getPhoneNum());
 		}
