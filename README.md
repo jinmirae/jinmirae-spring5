@@ -11,6 +11,16 @@
 - admin 부터 프로그램 작업 시작
 - 4장 패키지와 예외처리 실습.
 
+Repository https://github.com/jinmirae/jinmirae-spring5.git
+
+```
+에러발생 내용 후 커밋 작업
+push declined due to email privacy restrictions
+error: GH007: Your push would publish a private email address.
+You can make your email public or disable this protection by visiting:
+http://github.com/settings/emails
+```
+
 #### 20210601(화) 작업 
 - 프로젝트의 버전을 올립니다. -> 외부라이브러리 부분의 버전을 올림 - 메이븐 컴파일러 -> pom.xml
 - Controller클래스에서 생성한 변수 사용 (자바)model객체전송(스프링) return home -> (전송은 스프링)home.jsp 출력
