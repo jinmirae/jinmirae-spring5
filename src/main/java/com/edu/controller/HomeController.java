@@ -1,5 +1,6 @@
 package com.edu.controller;
 
+import org.slf4j.Logger;
 //외부 라이브러리(모듈) 사용 = import
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	//스프링빈(클래스)에서는 로거로 디버그를 합니다.= 로거객체를 만듭니다.
 	// 로그중 slf4j(Spring Log For Java)
-	//private Logger logger = Logger.
-	//private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+//	private Logger logger = Logger.
+//	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * 사용자요청(웹브라우저)을 받아서=@RequestMapping인터페이스를 사용해서 메서드명을 스프링이 구현한다.
