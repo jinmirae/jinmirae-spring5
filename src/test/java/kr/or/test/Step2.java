@@ -8,6 +8,11 @@ class MemberVO {
 	//이 클래스는 회원정보를 저장하는 자료형 클래스(자료) 입니다.
 	private String name;
 	private int age;
+	@Override
+	//하나씩 출력하기 힘들때 자동으로 출력하는 명령toString생성(아래)
+	public String toString() {
+		return "MemberVO 출력 [name=" + name + ", age=" + age + ", phoneNum=" + phoneNum + "]";
+	}
 	private String phoneNum;
 	//위 프라이빗 멤버빈수를 입출력 구현 메서드를 만듭니다.
 	public String getName() {
