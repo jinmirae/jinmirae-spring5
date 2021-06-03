@@ -6,9 +6,8 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- 알리아스Alias(별명) daraSource로 만듭니다. 이유? 여러개의 DB와 호환되게 만들게됩니다. 
-	오라클지원, Mysq1, Hsq1 등 여러 DB서버와 호환되게 만드는데 필요(아래)
-	-->
+	<!-- 알리아스Alias(별명) daraSource로 만듭니다. 이유? 여러개의 DB와 호환되게 만들게됩니다. -->
+	<!-- 오라클지원, Mysq1, Hsq1 등 여러 DB서버와 호환되게 만드는데 필요(아래) -->
 	
 	<alias name="dataSource-oracle_local" alias="dataSource"/>
 	<!-- 로컬(PC) Hsq1용-헤로쿠클라우드에 드라이버 설정(아래) -->
@@ -18,7 +17,7 @@
 		<property name="driverClassName" 
 				  value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url" 
-				  value="${jdbc:oracle:thin:@localhost:1521/XE}"></property>
+				  value="jdbc:oracle:thin:@localhost:1521/XE"></property>
 		<property name="username" value="XE"></property>
 		<property name="password" value="apmsetup"></property>
 	</bean>
