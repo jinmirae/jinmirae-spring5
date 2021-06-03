@@ -39,6 +39,7 @@ public class DataSourceTest {
 		Connection connection = null;
 		connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","XE","apmsetup");
 		logger.debug("데이터베이스 직접 접속이 성공 하였습니다. DB종류는"+ connection.getMetaData().getDatabaseProductName());
+		
 		connection = null;//메모리 초기화
 	}
 	@Test
