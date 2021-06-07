@@ -39,7 +39,7 @@ public class DataSourceTest {
 	public void oldQueryTest() throws Exception {
 		//스프링빈을 사용하지 않을때 방식: 코딩테스트에서는 스피링설정을 안쓰고, 직접 DB 아이디/암호 입력
 		Connection connection = null;
-		connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","XE","apmsetup");
+		connection = DriverManager.getConnection("jdbc:oracle:thin:@Localhost:1521/XE","XE","apmsetup");
 		logger.debug("데이터베이스 직접 접속이 성공 하였습니다. DB종류는"+ connection.getMetaData().getDatabaseProductName());
 		//직접쿼리를 날립니다. 날리기전 쿼리문자 객체생성statement
 		 Statement stmt = connection.createStatement();
@@ -57,8 +57,8 @@ public class DataSourceTest {
 		 //위에서 저장된 rs객체를 반복문으로 출력(아래)
 		 while(rs.next()) {
 			 //rs객체의 레코드가 없을때까지 반복
-			 logger.debug(rs.getString("deptno")+" "+rs.getString("dname")+" "
-					 +rs.getString("loc"));
+			 logger.debug(rs.getString("deptno")+" "+rs.getString("dname")
+			 +" "+rs.getString("loc"));
 		 }
 		 stmt = null;//메모리 반환
 		 rs = null;//메모리 반환

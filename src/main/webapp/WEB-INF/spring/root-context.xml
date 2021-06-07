@@ -15,13 +15,13 @@
 	<!-- 로컬(PC) 오라클 jdbc 드라이버 설정(아래) -->
 	
 	<bean id="dataSource-oracle_local" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" 
-				  value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-		<property name="url" 
-				  value="jdbc:log4jdbc:oracle:thin:@localhost:1521/XE"></property>
-		<property name="username" value="XE"></property>
-		<property name="password" value="apmsetup"></property>
-	</bean>
+      <property name="driverClassName" 
+              value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+      <property name="url"
+              value="jdbc:log4jdbc:oracle:thin:@localhost:1521/XE"></property>
+      <property name="username" value="XE"></property>
+      <property name="password" value="apmsetup"></property>
+   </bean>
 	
 	<!-- 
 	<bean id="dataSource-oracle_local" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
