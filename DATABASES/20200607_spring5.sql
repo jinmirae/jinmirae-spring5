@@ -8,6 +8,8 @@ DROP TABLE "XE"."TBL_BOARD" cascade constraints;
 DROP TABLE "XE"."TBL_BOARD_TYPE" cascade constraints;
 DROP TABLE "XE"."TBL_MEMBER" cascade constraints;
 DROP TABLE "XE"."TBL_REPLY" cascade constraints;
+DROP PROCEDURE "XE"."PROC_DUMMY_BOARD";
+DROP PROCEDURE "XE"."PROC_DUMMY_MEMBER";
 DROP FUNCTION "XE"."CUSTOM_AUTH";
 DROP FUNCTION "XE"."CUSTOM_HASH";
 --------------------------------------------------------
@@ -205,6 +207,108 @@ Insert into XE.TBL_REPLY (RNO,REPLY_TEXT,REPLYER,REG_DATE,UPDATE_DATE,BNO) value
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
+--  DDL for Procedure PROC_DUMMY_BOARD
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "XE"."PROC_DUMMY_BOARD" 
+(
+  P_COUNT IN NUMBER 
+) AS 
+--이 프로시저는 게시물 개수를 받아서 반은 공지사항으로
+--나머지 반은 겔러리로 더미게시물을 입력하는 프로그램
+--실행방법: CALL PROC_DUMMY_BOARD(100);
+BEGIN
+  --여러번 실행시 PK제약조건때문에 삭제쿼리 추가(아래)
+  DELETE FROM tbl_attach WHERE 1=1;
+  DELETE FROM tbl_reply WHERE 1=1;
+  DELETE FROM tbl_board WHERE 1=1;
+  FOR cnt IN 1..P_COUNT LOOP
+    IF(cnt <= P_COUNT/2) THEN
+      --공지사항글 등록
+      INSERT INTO tbl_board VALUES (
+      cnt
+      ,'공지사항게시물제목'
+      ,'공지사항게시물내용'
+      ,'admin'
+      ,0
+      ,0
+      ,sysdate+(cnt*(1/24/60/60))
+      ,sysdate+(cnt*(1/24/60/60))
+      ,'notice'
+      );
+    ELSE
+      --겔러리글 등록
+      INSERT INTO tbl_board VALUES (
+      cnt
+      ,'겔러리게시물제목'
+      ,'겔러리게시물내용'
+      ,'admin'
+      ,0
+      ,0
+      ,sysdate+(cnt*(1/24/60/60))
+      ,sysdate+(cnt*(1/24/60/60))
+      ,'gallery'
+      );
+    END IF;
+  END LOOP;
+  COMMIT;
+END PROC_DUMMY_BOARD;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure PROC_DUMMY_MEMBER
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "XE"."PROC_DUMMY_MEMBER" 
+(
+  P_COUNT IN NUMBER 
+) AS 
+-- 이 프로시저는 입력받은 회원수대로 회원을 레코드를 
+-- 생성하는 DB프로그램 입니다.
+-- 호출(실행)하는 법: (아래)
+-- call PROC_DUMMY_MEMBER(100);
+BEGIN
+
+  --2번 이상 호출시 user_id필드의 PK제약조건때문에 기존내용 삭제후
+  DELETE FROM tbl_member WHERE 1=1;
+  --cnt변수 IN 1부터 P_COUNT까지 루프반복;
+  FOR cnt IN 1..P_COUNT LOOP
+    if(p_count = cnt) THEN -- cnt가 증가값이 100일때
+        --관리자등록쿼리(아래)
+        INSERT INTO tbl_member VALUES (
+        'asmin'
+        ,'1234'--나중에는 스프링시큐리티로 암호화해서 변경예정
+        ,'관리자'
+        ,'admin@test.com'
+        ,0
+        ,1 -- 회원가입시 로그인 가능한지 1로그인가능, 0로그인불가
+        ,'ROLE_ADMIN' --ROLE_USER(일반사용자),ROLE_ADMIN(관리자)
+        ,sysdate+(cnt*(1/24/60/60)) --오라클전용 현재날짜 변수(mysql now()와 동일)
+        ,sysdate+(cnt*(1/24/60/60)) --cnt*단위(초)
+        );
+    ELSE
+        --등록쿼리(아래)
+        INSERT INTO tbl_member VALUES (
+        'user'||cnt
+        ,'1234'--나중에는 스프링시큐리티로 암호화해서 변경예정
+        ,'사용자'||cnt
+        ,'user@test.com'
+        ,0
+        ,1 -- 회원가입시 로그인 가능한지 1로그인가능, 0로그인불가
+        ,'ROLE_USER' --ROLE_USER(일반사용자),ROLE_ADMIN(관리자)
+        ,sysdate+(cnt*(1/24/60/60)) --오라클전용 현재날짜 변수(mysql now()와 동일)
+        ,sysdate+(cnt*(1/24/60/60)) --cnt*단위(초)
+        );
+    END IF;
+        --정렬문제가 발생하기 때문에 sysdate+1초 증가하게 처리
+  END LOOP;
+  COMMIT;
+END PROC_DUMMY_MEMBER;
+
+/
+--------------------------------------------------------
 --  DDL for Function CUSTOM_AUTH
 --------------------------------------------------------
 
@@ -247,6 +351,7 @@ else
 end if;
 end;
 
+
 /
 --------------------------------------------------------
 --  DDL for Function CUSTOM_HASH
@@ -270,57 +375,58 @@ l_password := utl_raw.cast_to_raw(dbms_obfuscation_toolkit.md5
 return l_password;
 end;
 
+
 /
 --------------------------------------------------------
 --  Constraints for Table TBL_ATTACH
 --------------------------------------------------------
 
+  ALTER TABLE "XE"."TBL_ATTACH" MODIFY ("SAVE_FILE_NAME" NOT NULL ENABLE);
   ALTER TABLE "XE"."TBL_ATTACH" ADD CONSTRAINT "TBL_ATTACH_PK" PRIMARY KEY ("SAVE_FILE_NAME")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "XE"."TBL_ATTACH" MODIFY ("SAVE_FILE_NAME" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table TBL_BOARD
 --------------------------------------------------------
 
+  ALTER TABLE "XE"."TBL_BOARD" MODIFY ("BNO" NOT NULL ENABLE);
   ALTER TABLE "XE"."TBL_BOARD" ADD CONSTRAINT "TBL_BOARD_PK" PRIMARY KEY ("BNO")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "XE"."TBL_BOARD" MODIFY ("BNO" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table TBL_BOARD_TYPE
 --------------------------------------------------------
 
+  ALTER TABLE "XE"."TBL_BOARD_TYPE" MODIFY ("BOARD_TYPE" NOT NULL ENABLE);
   ALTER TABLE "XE"."TBL_BOARD_TYPE" ADD CONSTRAINT "TBL_BOARD_TYPE_PK" PRIMARY KEY ("BOARD_TYPE")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "XE"."TBL_BOARD_TYPE" MODIFY ("BOARD_TYPE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table TBL_MEMBER
 --------------------------------------------------------
 
+  ALTER TABLE "XE"."TBL_MEMBER" MODIFY ("USER_ID" NOT NULL ENABLE);
   ALTER TABLE "XE"."TBL_MEMBER" ADD CONSTRAINT "TBL_MEMBER_PK" PRIMARY KEY ("USER_ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "XE"."TBL_MEMBER" MODIFY ("USER_ID" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table TBL_REPLY
 --------------------------------------------------------
 
+  ALTER TABLE "XE"."TBL_REPLY" MODIFY ("RNO" NOT NULL ENABLE);
   ALTER TABLE "XE"."TBL_REPLY" ADD CONSTRAINT "TBL_REPLY_PK" PRIMARY KEY ("RNO")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "XE"."TBL_REPLY" MODIFY ("RNO" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Ref Constraints for Table TBL_ATTACH
 --------------------------------------------------------
