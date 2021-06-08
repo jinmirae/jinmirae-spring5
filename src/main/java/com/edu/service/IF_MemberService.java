@@ -1,5 +1,11 @@
 package com.edu.service;
 
-public class IF_MemberService {
+import java.util.List;
+
+import com.edu.vo.MemberVO;
+
+public interface IF_MemberService {
+	
+	public List<MemberVO> selectMember() throws Exception;
 
 }

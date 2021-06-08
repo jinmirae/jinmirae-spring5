@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
@@ -15,6 +16,9 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+
+import com.edu.service.IF_MemberService;
+import com.edu.vo.MemberVO;
 
 /**
  * 이 클래스는 오라클과 연동해서 CRUD를 테스트하는 클래스 입니다.
@@ -40,11 +44,19 @@ public class DataSourceTest {
 	//보통 ValueOBject클래스는 DB테이블과 1:1로 매칭이 됩니다.
 	//그래서, MemberVO.java VO클래스를 생성.(필수)
 	//2. DB(마이바티스)쿼리를 만듭니다. (VO사용됨)
+	@Inject
+	private IF_MemberService memberService;
 	
 	@Test
 	public void selectMember() throws Exception {
 		//회원관리 테이블에서 더미로 입력한 100개의 레코드를 출력 메서드 테스트->회원관리목록이 출력
-		
+		//현재100명 검색기능, 페이징기능 여기서 구현. 1페이지에 10명씩 나오게변경
+		//현재 몇페이지, 검색어 임시저장 공간 -> DB에 페이징조건, 검색조건문
+		//변수를 2-3이상은 바로 String변수로 처리하지않고, VO만들어 사용.
+		//PageVO.java클래스를 만들어 페이징처리변수와 검색어변수 선언, Get/Set생성
+		//PageVO만들기전 SQL쿼리로 가상으로 페이지를 한번 구현해 보면서, 필요한 변수 만들어야 합니다.
+		List<MemberVO> listMember = memberService.selectMember();
+		listMember.toString();
 	}
 	
 	@Test
