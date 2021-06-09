@@ -26,5 +26,12 @@ public class MemberServiceImpl implements IF_MemberService {
 		// 인터페이스에서 상속받은 메서드를 구현(아래)
 		return memberDAO.selectMember();
 	}
+	
+	@Override
+	public int countMember() throws Exception {
+		// 인젝션으로 주입받은 DAO객체를 사용(아래)
+		return memberDAO.countMember();
 
 }
+
+	}
