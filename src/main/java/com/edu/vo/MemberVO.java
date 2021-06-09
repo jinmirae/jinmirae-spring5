@@ -15,7 +15,7 @@ public class MemberVO {
 	private String user_pw;
 	private String user_name;
 	private String email;
-	private String point;//정수형 int를 사용하지 않고, Intrger를 사용하는 이유는 클래스(참조형)데이터형은 Null을 허용하기 때문에 사용.
+	private Integer point;//정수형 int를 사용하지 않고, Intrger를 사용하는 이유는 클래스(참조형)데이터형은 Null을 허용하기 때문에 사용.
 	private Boolean enabled;//논리-불린형boolean -> Boolean 사용
 	private String levels;
 	private Date reg_date;
@@ -46,10 +46,10 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPoint() {
+	public Integer getPoint() {
 		return point;
 	}
-	public void setPoint(String point) {
+	public void setPoint(Integer point) {
 		this.point = point;
 	}
 	public Boolean getEnabled() {
