@@ -42,5 +42,10 @@ public class MemberDAOImpl implements IF_MemberDAO{
 		sqlSession.insert("memberMapper.insertMember", memberVO);
 		
 	}
+	
+	@Override
+	public void deleteMember(String user_id) throws Exception {
+		sqlSession.delete("memberMapper.deleteMember", user_id);
+	}
 
 }

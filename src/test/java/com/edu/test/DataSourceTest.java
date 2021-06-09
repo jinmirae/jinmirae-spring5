@@ -24,7 +24,7 @@ import com.edu.vo.PageVO;
 /**
  * 이 클래스는 오라클과 연동해서 CRUD를 테스트하는 클래스 입니다.
  * 과장(이사,팀장) JUnit CRUD까지 만들어서 일반사원에게 공개 + 회원관리
- * @author 김일국
+ * @author 진미래
  *
  */
 //RunWith인터페이스 현재클래스가 Junit실행클래스라고 명시
@@ -41,6 +41,12 @@ public class DataSourceTest {
 	//Inject 자바8부터 지원, 그럼, 이전 자바7에서 @Autowired 로 객체를 만들었슴
 	@Inject //MemberService서비스를 주입받아서 객체를 사용합니다.(아래)
 	private IF_MemberService memberService;
+	
+	@Test
+	public void deleteMember() throws Exception {
+		memberService.deleteMember("user_del");
+		selectMember();
+	}
 	
 	@Test
 	public void insertMember() throws Exception {
