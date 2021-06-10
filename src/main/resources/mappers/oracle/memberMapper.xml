@@ -38,7 +38,7 @@ if조건문에서 test조건부분에 문자열비교시 '문자열'.toString()�
 	update_date = systimestamp,
 	<if test="user_pw != ''">
 	user_pw = #{user_pw},
-	</if>
+	</if> 
 	user_name = #{user_name}
 	where user_id = #{user_id}
 </update>
