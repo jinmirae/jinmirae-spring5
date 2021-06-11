@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.edu.service.IF_MemberService;
 import com.edu.vo.MemberVO;
@@ -31,8 +32,21 @@ public class AdminController {
 	@Inject
 	private IF_MemberService memberService;
 	
+	@RequestMapping(value="/admin/member/member_view",method=RequestMethod.GET)
+	public String viewMemberFrom(Model model, @RequestParam("user_id")String user_id, @ModelAttribute("PageVO")PageVO pageVO) throws Exception {
+		/*
+		 * 이 메서드는 리스트페이지에서 상세보기로 이동할때 보여주는 1개 레코드값을 보여주는 구현을 합니다.
+		 * JUnit에서 테스트했던 readMember 방식을 이용.
+		 * 다른점은 JUnit에서는 식별자 ID를 강제로 지정했지만, 이 메서드에서는@RequsetParam인터페이스를 이용해서 식별자값을 받음.
+		 */
+		memberService.readMember(user_id);
+		//위 출력값 memberVO 1개의 레코드를 model를 이용해서 member_view.jsp 보냅니다.(아래)
+		model.addAttribute("memberVO", memberService.readMember(user_id));
+		return "admin/member/member_view";//상태경로 폴더파일위치
+	}
+	
 	@RequestMapping(value="/admin/member/member_list", method=RequestMethod.GET)
-	public String selectMember(@ModelAttribute("PageVO")PageVO pageVO,Model model) throws Exception {
+	public String selectMember(@ModelAttribute("pageVO")PageVO pageVO,Model model) throws Exception {
 		/*
 		 * 이 메서드는 2가지 객체 생성하는 로직이 필요. 결과를 jsp로 보내는 기능을 수행
 		 * 1객체: memberList객체를 생성해서 model을 통해서 jsp로 전송
