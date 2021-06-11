@@ -56,7 +56,7 @@ public class DataSourceTest {
 		//메서드내 적용된 객체변수 생성
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		//스프링5시큐리티 암호화 적용로직(아래)
-		if((memberVO.getUser_pw()).length() > 0) {
+		if((memberVO.getUser_pw()).length() > 0) {			
 			String userPwEncoder = passwordEncoder.encode(memberVO.getUser_pw());
 			memberVO.setUser_pw(userPwEncoder);//암호화된 해시데이터가 memberVO객체 임시저장됨.
 		}
@@ -75,7 +75,7 @@ public class DataSourceTest {
 		for(MemberVO memberOne:listMember) { //listMember객체 비워질때까지 반복
 			//혹시 여러번 실행시켜서 중복암호화 시킬수 있으므로 제외조건을 추가(아래)
 			String rawPassword = memberOne.getUser_pw();
-			if(rawPassword.length() < 10) {//원시암호데이터 길이가 50보다 작을때만 암호화로직 진입
+			if(rawPassword.length() < 50) {//원시암호데이터 길이가 50보다 작을때만 암호화로직 진입
 				//memberOne객체(1개의레코드)의 암호를 뽑아서 시큐리티로 암호화 시킨 후 onePwEncoder변수입력
 				String onePwEncoder = passwordEncoder.encode(rawPassword);
 				memberOne.setUser_pw(onePwEncoder);
@@ -127,7 +127,7 @@ public class DataSourceTest {
 		pageVO.setPage(1);//기본값으로 1페이지를 입력합니다.
 		pageVO.setPerPageNum(10);//UI하단사용 페이지 개수
 		pageVO.setQueryPerPageNum(1000);//쿼리사용 페이지당 개수
-		//pageVO.setTotalCount(memberService.countMember());//테스트하려고, 100명을 입력합니다.
+		//pageVO.setTotalCount(memberService.countMember(pageVO));//테스트하려고, 100명을 입력합니다.
 		/* 모든 사용자를 출력하지 않고, 일부 사용자만 출력할때 아래 2줄필요
 		pageVO.setSearch_type("user_id");//검색타입 all, user_id, user_name
 		pageVO.setSearch_keyword("user_del");//검색어

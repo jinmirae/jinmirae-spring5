@@ -38,7 +38,7 @@ if조건문에서 test조건부분에 문자열비교시 '문자열'.toString()�
 	update_date = systimestamp,
 	<if test="user_pw != ''">
 	user_pw = #{user_pw},
-	</if> 
+	</if>
 	user_name = #{user_name}
 	where user_id = #{user_id}
 </update>
@@ -76,11 +76,12 @@ systimestamp
 )
 </insert>
 <!-- 현재처럼 무조건 갯수를 구하면, 검색결과에 대한 페이징 값을 구할 수 없음.
-그래서 검색이 포함된 카우트개수가 나와함. -->
-	<select id="countMember" resultType="int">
+그래서 검색이 포함된 카우트개수가 나와함.아래쿼리는 검색한 전체개수를 구한쿼리
+이 결과를 PageVO클래스의  calPage() 메서드 사용 -->
+<select id="countMember" resultType="int">
 	select count(*) from tbl_member
 	<include refid="sqlWhere" />
-	</select>
+</select>
 <!-- pageVO 받아서 처리하는 조회 쿼리 -->
 <select id="selectMember" resultType="com.edu.vo.MemberVO">
 SELECT TableB.* FROM
