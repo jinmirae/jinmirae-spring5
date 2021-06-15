@@ -40,7 +40,7 @@ public class AdminController {
 		return "/admin/member/member_insert";//jsp는 생략
 	}
 	//아래 경로는 회원신규등록을 처리하는 서비스를 호출하는 URL
-	@RequestMapping(value="/admin/member/member_insert_isert", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/member/member_insert", method=RequestMethod.POST)
 	public String insertMember() throws Exception {
 		
 		return null;
