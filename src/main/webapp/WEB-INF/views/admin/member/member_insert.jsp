@@ -110,12 +110,12 @@ $(document).ready(function(){
 			success:function(result){
 				alert(result);//디버그용
 				if(result==0){//중복ID가 없다면 정상진행
-					$("btn_insert").attr("disabled",false);//등록버튼 활성화
+					$("#btn_insert").attr("disabled",false);//등록버튼 활성화
 					alert("사용가능한 ID입니다.");
 				}
 				if(result==1){//중복ID가 있다면 진행중지
 					$("#btn_insert").attr("disabled",true);//등록버튼 비활성화
-					alert("중복ID가 존재합니다. 다시 입력해 주세요!");
+					alert("올바르지 않거나,중복ID가 존재합니다. 다시 입력해 주세요!");
 				}
 			},
 			error:function(){
