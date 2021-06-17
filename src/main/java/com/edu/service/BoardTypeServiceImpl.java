@@ -22,7 +22,7 @@ public class BoardTypeServiceImpl implements IF_BoardTypeService {
 	@Override //부모super 인터페이스의 메서드를 상속받아서 재정의Override 합니다.
 	public void deleteBoardType(String board_type) throws Exception {
 		// TODO DAO클래스 객체를 이용해서 메서드를 호출(실해)
-		board_typeDAO.deleteBoardType(boardTypeVO);
+		boardTypeDAO.deleteBoardType(board_type);
 	}
 
 	@Override
