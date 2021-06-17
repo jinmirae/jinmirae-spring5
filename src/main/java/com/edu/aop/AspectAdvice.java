@@ -16,11 +16,13 @@ import com.edu.vo.BoardTypeVO;
  * @author 진미래
  *
  */
-@Aspect 
+//@Aspect 
 @ControllerAdvice 
 public class AspectAdvice {
 	@Inject
 	private IF_BoardTypeService boardTypeService;
+	
+	//나중에 게시물관리 기능 만들때 @Aspect로 AOP기능 추가할 예정
 	
 	//이 메서드는 컨트롤러로의 메서드가 실행 전에 값을 생성해서 model객체에 담아서 jsp로 자료를 전송
 	//위 @컨트롤러어드바이스를 이용해서 컨트롤러의 모든 메서드가 실행되기 호출만되면 아래 메서드가 자동실행(콜백함수)
