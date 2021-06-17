@@ -1,7 +1,7 @@
 package com.edu.vo;
 /**
  * 이 클래스는 게시판생성관리의 데이터를 입/출력
- * @author Gukko
+ * @author 진미래
  *
  */
 public class BoardTypeVO {
