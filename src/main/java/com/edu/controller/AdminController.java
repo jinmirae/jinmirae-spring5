@@ -53,7 +53,7 @@ public class AdminController {
 		pageVO.setQueryPerPageNum(5);
 		pageVO.setTotalCount(boardService.countBoard(pageVO));
 		
-		model.addAttribute("listBoardVO", null);
+		model.addAttribute("listBoardVO", boardService.selectBoard(pageVO));
 		return "admin/board/board_list";//.jsp생략
 	}
 	//jsp에서 게시판생성관리에 Get/Post 접근할때 URL을 bbs_type로 지정합니다.
