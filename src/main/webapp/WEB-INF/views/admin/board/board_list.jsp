@@ -45,7 +45,7 @@
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
-                  <input type="hideen" value="${pageVO.board_type}" name="board_type">                                
+                  <input type="hidden" value="${pageVO.board_type}" name="board_type">                                
                 </form>
               </div>
               <!-- //내용검색 폼 -->
@@ -72,7 +72,7 @@
                   <td>${boardVO.board_type}</td>
                   <td>${boardVO.title}</td>
                   <td>${boardVO.writer}</td>
-                  <td><fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss.SSSS" value="${boardVO.reg_date}" /></td>
+                  <td><fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss.SSSS" value="${boardVO.reg_date}"/></td>
                 </tr>
                 </c:forEach>
                 
