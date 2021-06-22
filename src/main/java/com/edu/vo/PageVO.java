@@ -32,6 +32,7 @@ public class PageVO {
 
 	//Get,Set용 메서드 추가
 	public String getBoard_type() {
+		if(board_type==null) {}
 		return board_type;
 	}
 

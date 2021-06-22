@@ -67,7 +67,7 @@
               <tbody>
                 <!-- 아래 링크주소에 jsp에서 프로그램처리예정 -->
                 <c:forEach var="boardVO" items="${listBoardVO}">
-                <tr style="cursor: pointer;" onclick="location.replace('/admin/board/board_view?bno=${boardVO.bno}');">
+                <tr style="cursor: pointer;" onclick="location.replace('/admin/board/board_view?bno=${boardVO.bno}&page=${pageVO.page}&search_type=${pageVO.search_type}&search_keyword=${pageVO.search_keyword}');">
                   <td>${boardVO.bno}</td>
                   <td>${boardVO.board_type}</td>
                   <td>${boardVO.title}</td>
@@ -75,6 +75,7 @@
                   <td><fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss.SSSS" value="${boardVO.reg_date}"/></td>
                 </tr>
                 </c:forEach>
+                
                 
               </tbody>
             </table>

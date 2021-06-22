@@ -27,7 +27,6 @@ import com.edu.vo.PageVO;
  * @author 진미래
  *
  */
-@Component
 @Aspect
 @ControllerAdvice
 public class AspectAdvice {
@@ -49,7 +48,7 @@ public class AspectAdvice {
 		//일반적인 컨트롤러에서는 매개변수 HttpServletRequest를 사용가능함. 위처럼 복잡하게 구하지 않음.
 		//컨트롤러 클래스에서 매개변수로 받을값(board_type) < pageVO
 		PageVO pageVO = null;
-		String board_type = null;//jsp에서 전송되는 값을 임시로 저장,목적은 세션변수 발생조건으로사용
+		String board_type = "";//jsp에서 전송되는 값을 임시로 저장,목적은 세션변수 발생조건으로사용
 		//조인포인트리스트의 객체의 메서드의 Arguments(매개변수)를 뽑아냄 
 		for(Object object:pjp.getArgs()) {
 			if(object instanceof PageVO) {
@@ -65,11 +64,12 @@ public class AspectAdvice {
 			}
 			if(session.getAttribute("session_board_type") != null) {
 				board_type = (String) session.getAttribute("session_board_type");
-				pageVO.setBoard_type(board_type);//검색목표달성:여기서 항상 값을 가져가도록 구현됩니다.
+				if(pageVO != null) {//Set은 pageVO가 null아닐 경우만 실행되도록
+					pageVO.setBoard_type(board_type);//검색목표달성:여기서 항상 값을 가져가도록 구현됩니다.
+				}
 			}
 			logger.info("디버그19: "+(String) session.getAttribute("session_board_type"));
-		}
-		//Aspect > 포인트컷(Around) > 조인포인트(메서드) > 매개변수로 구현한 결과를 리턴
+		}		//Aspect > 포인트컷(Around) > 조인포인트(메서드) > 매개변수로 구현한 결과를 리턴
 		
 		Object result = pjp.proceed();//여기서 조인포인트가 실행됩니다.
 		return result;
