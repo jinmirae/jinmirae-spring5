@@ -46,11 +46,11 @@
               </div>
               <div class="form-group">
                 <label for="title">글제목</label>
-                <input name="title" type="text" class="form-control" id="title" placeholder="제목을 입력해 주세요." required>
+                <input value="${boardVO.title}" name="title" type="text" class="form-control" id="title" placeholder="제목을 입력해 주세요." required>
               </div>
               <div class="form-group">
                 <label for="content">글내용</label>
-                <textarea name="content" id="content" class="form-control" placeholder="내용을 입력해 주세요." required></textarea>
+                <textarea name="content" id="content" class="form-control" placeholder="내용을 입력해 주세요." required>${boardVO.content}</textarea>
               </div>
               <div class="form-group">
                 <label for="writer">작성자</label>
