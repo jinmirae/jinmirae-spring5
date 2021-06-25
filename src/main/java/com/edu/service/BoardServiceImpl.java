@@ -8,19 +8,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.dao.IF_BoardDAO;
+import com.edu.dao.IF_ReplyDAO;
 import com.edu.vo.AttachVO;
 import com.edu.vo.BoardVO;
 import com.edu.vo.PageVO;
 
 /**
  * 이 클래스는 DAO메서드를 호출하는 기능을 합니다.
- * @author 진미래
+ * @author 김일국
  *
  */
 @Service //@애노테이션을 붙이면 스프링 빈으로 등록이 됨.
 public class BoardServiceImpl implements IF_BoardService {
 	@Inject
 	private IF_BoardDAO boardDAO;
+	@Inject
+	private IF_ReplyDAO replyDAO;
 	
 	@Override
 	public List<AttachVO> readAttach(Integer bno) throws Exception {
@@ -42,7 +45,9 @@ public class BoardServiceImpl implements IF_BoardService {
 		// 위와 같은 상황을 방지하는 목적의 기능으로 @Transantional 애노테이션을 사용함니다.
 		// 댓글 삭제도 *나중에 추가
 		// 특이사항: 첨부파일 DB만 삭제해서 해결 + 실제 업로드된 파일을 삭제가 필요 *나중에 추가
-		boardDAO.deleteAttachAll(bno);		
+		boardDAO.deleteAttachAll(bno);
+		//댓글 DAO에서 deleteReplyAll실행
+		replyDAO.deleteReplyAll(bno);
 		boardDAO.deleteBoard(bno);
 	}
 
@@ -66,7 +71,6 @@ public class BoardServiceImpl implements IF_BoardService {
 				attachVO.setSave_file_name(save_file_name);
 				attachVO.setReal_file_name(real_file_name);
 				boardDAO.updateAttach(attachVO);
-				
 			}
 			index = index + 1;//index++;
 		}
@@ -91,7 +95,7 @@ public class BoardServiceImpl implements IF_BoardService {
 		int bno = boardDAO.insertBoard(boardVO);
 		//첨부파일 등록: 1개 이상일때 가정해서 처리
 		//save_file_names[] = ["uuid1.jpg","uuid2.jpg"]
-		//real_file_names[] = ["slide1.jpg","slide2.jpg"]
+		//real_file_names[] = ["슬라이드1.jpg","슬라이드2.jpg"]
 		String[] save_file_names=boardVO.getSave_file_names();//폴더에 저장용 파일명들
 		String[] real_file_names=boardVO.getReal_file_names();//UI용 배열 파일명들
 		if(save_file_names == null) { return; }//리턴이 발생되면, 이후 실행 않됨.
@@ -99,15 +103,14 @@ public class BoardServiceImpl implements IF_BoardService {
 		int index = 0;
 		String real_file_name = "";//UI용 1개 파일명
 		AttachVO attachVO = new AttachVO();
-		//위 가로데이터를 세로데이터로 1개씩 뽑아서 인서트하는 로직
+		//위 가로데이터를 세로데이터 1개씩 뽑아서 인서트하는 로직
 		for(String save_file_name:save_file_names) {//첨부파일 개수만큼 반복진행
 			if(save_file_name != null) {
-				real_file_name = real_file_names[index];
+				real_file_name = real_file_names[index];			
 				attachVO.setBno(bno);
 				attachVO.setReal_file_name(real_file_name);
 				attachVO.setSave_file_name(save_file_name);
 				boardDAO.insertAttach(attachVO);
-			
 			}
 			index++;//index = index + 1;
 		}
