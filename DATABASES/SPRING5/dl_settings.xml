@@ -295,7 +295,7 @@
 	<comparemapping>
 	</comparemapping>
 	<engineering_params>
-		<delete_without_origin value="false"/>
+		<delete_"/resources/home/out_origin value="false"/>
 		<engineer_coordinates value="true"/>
 		<engineer_generated value="false"/>
 		<show_engineering_intree value="false"/>

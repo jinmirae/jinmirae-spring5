@@ -51,11 +51,11 @@ public class DataSourceTest {
 	public void insertBoard() throws Exception {
 		BoardVO boardVO = new BoardVO();
 		boardVO.setTitle("인서트후 반환값테스트");
-		boardVO.setContent("J유닛테스트");
+		boardVO.setContent("J유닛입력테스트");
 		boardVO.setWriter("admin");
+		boardVO.setBoard_type("gallery");
 		boardService.insertBoard(boardVO);
 	}
-	
 	@Test
 	public void updateMember() throws Exception {
 		//이 메서드는 회원 정보수정(1개 레코드). jsp에서 사용예정.

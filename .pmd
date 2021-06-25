@@ -30,7 +30,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>AbstractClassWithoutAnyMethod</name>
+            <name>AbstractClass"/resources/home/outAnyMethod</name>
             <ruleset>Design</ruleset>
         </rule>
         <rule>
@@ -178,7 +178,7 @@
             <ruleset>Design</ruleset>
         </rule>
         <rule>
-            <name>UseLocaleWithCaseConversions</name>
+            <name>UseLocale"/resources/home/CaseConversions</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -294,7 +294,7 @@
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
-            <name>ReplaceVectorWithList</name>
+            <name>ReplaceVector"/resources/home/List</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -418,7 +418,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>UseIOStreamsWithApacheCommonsFileItem</name>
+            <name>UseIOStreams"/resources/home/ApacheCommonsFileItem</name>
             <ruleset>Performance</ruleset>
         </rule>
         <rule>
@@ -450,7 +450,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>UseTryWithResources</name>
+            <name>UseTry"/resources/home/Resources</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -470,7 +470,7 @@
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
-            <name>AvoidWithStatement</name>
+            <name>Avoid"/resources/home/Statement</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -662,7 +662,7 @@
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
-            <name>MethodWithSameNameAsEnclosingClass</name>
+            <name>Method"/resources/home/SameNameAsEnclosingClass</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -694,7 +694,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>TestClassWithoutTestCases</name>
+            <name>TestClass"/resources/home/outTestCases</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -782,7 +782,7 @@
             <ruleset>Performance</ruleset>
         </rule>
         <rule>
-            <name>UseBaseWithParseInt</name>
+            <name>UseBase"/resources/home/ParseInt</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -806,7 +806,7 @@
             <ruleset>Documentation</ruleset>
         </rule>
         <rule>
-            <name>TO_DATEWithoutDateFormat</name>
+            <name>TO_DATE"/resources/home/outDateFormat</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -830,7 +830,7 @@
             <ruleset>Design</ruleset>
         </rule>
         <rule>
-            <name>AbstractClassWithoutAbstractMethod</name>
+            <name>AbstractClass"/resources/home/outAbstractMethod</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -858,7 +858,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>ClassWithOnlyPrivateConstructorsShouldBeFinal</name>
+            <name>Class"/resources/home/OnlyPrivateConstructorsShouldBeFinal</name>
             <ruleset>Design</ruleset>
         </rule>
         <rule>
@@ -998,7 +998,7 @@
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
-            <name>ClassCastExceptionWithToArray</name>
+            <name>ClassCastException"/resources/home/ToArray</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -1026,7 +1026,7 @@
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
-            <name>ReplaceEnumerationWithIterator</name>
+            <name>ReplaceEnumeration"/resources/home/Iterator</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -1034,7 +1034,7 @@
             <ruleset>Security</ruleset>
         </rule>
         <rule>
-            <name>SimplifyStartsWith</name>
+            <name>SimplifyStarts"/resources/home/</name>
             <ruleset>Performance</ruleset>
         </rule>
         <rule>
@@ -1154,7 +1154,7 @@
             <ruleset>Design</ruleset>
         </rule>
         <rule>
-            <name>ReplaceHashtableWithMap</name>
+            <name>ReplaceHashtable"/resources/home/Map</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -1334,7 +1334,7 @@
             <ruleset>Performance</ruleset>
         </rule>
         <rule>
-            <name>MethodWithSameNameAsEnclosingClass</name>
+            <name>Method"/resources/home/SameNameAsEnclosingClass</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -1402,7 +1402,7 @@
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
-            <name>CompareObjectsWithEquals</name>
+            <name>CompareObjects"/resources/home/Equals</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -1506,7 +1506,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>TO_TIMESTAMPWithoutDateFormat</name>
+            <name>TO_TIMESTAMP"/resources/home/outDateFormat</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -1526,7 +1526,7 @@
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
-            <name>StringBufferInstantiationWithChar</name>
+            <name>StringBufferInstantiation"/resources/home/Char</name>
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
@@ -1558,7 +1558,7 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>WhileLoopWithLiteralBoolean</name>
+            <name>WhileLoop"/resources/home/LiteralBoolean</name>
             <ruleset>Best Practices</ruleset>
         </rule>
         <rule>
@@ -1638,7 +1638,7 @@
             <ruleset>Error Prone</ruleset>
         </rule>
         <rule>
-            <name>AppendCharacterWithChar</name>
+            <name>AppendCharacter"/resources/home/Char</name>
             <ruleset>Performance</ruleset>
         </rule>
         <rule>

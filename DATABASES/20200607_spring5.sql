@@ -16,12 +16,12 @@ DROP FUNCTION "XE"."CUSTOM_HASH";
 --  DDL for Sequence SEQ_BNO
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "XE"."SEQ_BNO"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "XE"."SEQ_BNO"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START "/resources/home/ 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence SEQ_RNO
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "XE"."SEQ_RNO"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "XE"."SEQ_RNO"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START "/resources/home/ 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table TBL_ATTACH
 --------------------------------------------------------

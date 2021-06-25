@@ -19,7 +19,7 @@
 
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
-		// For environments that do not have a `window` with a `document`
+		// For environments that do not have a `window` "/resources/home/ a `document`
 		// (such as Node.js), expose a factory as module.exports.
 		// This accentuates the need for the creation of a real `window`.
 		// e.g. var jQuery = require("jquery")(window);
@@ -28,7 +28,7 @@
 			factory( global, true ) :
 			function( w ) {
 				if ( !w.document ) {
-					throw new Error( "jQuery requires a window with a document" );
+					throw new Error( "jQuery requires a window "/resources/home/ a document" );
 				}
 				return factory( w );
 			};
@@ -283,7 +283,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 
 	for ( ; i < length; i++ ) {
 
-		// Only deal with non-null/undefined values
+		// Only deal "/resources/home/ non-null/undefined values
 		if ( ( options = arguments[ i ] ) != null ) {
 
 			// Extend the base object
@@ -331,7 +331,7 @@ jQuery.extend( {
 	// Unique for each copy of jQuery on the page
 	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
 
-	// Assume jQuery is ready without the ready module
+	// Assume jQuery is ready "/resources/home/out the ready module
 	isReady: true,
 
 	error: function( msg ) {
@@ -351,12 +351,12 @@ jQuery.extend( {
 
 		proto = getProto( obj );
 
-		// Objects with no prototype (e.g., `Object.create( null )`) are plain
+		// Objects "/resources/home/ no prototype (e.g., `Object.create( null )`) are plain
 		if ( !proto ) {
 			return true;
 		}
 
-		// Objects with prototype are plain iff they were constructed by a global Object function
+		// Objects "/resources/home/ prototype are plain iff they were constructed by a global Object function
 		Ctor = hasOwn.call( proto, "constructor" ) && proto.constructor;
 		return typeof Ctor === "function" && fnToString.call( Ctor ) === ObjectFunctionString;
 	},
@@ -680,7 +680,7 @@ var i,
 			// Strip the backslash prefix from a non-hex escape sequence
 			nonHex :
 
-			// Replace a hexadecimal escape sequence with the encoded Unicode code point
+			// Replace a hexadecimal escape sequence "/resources/home/ the encoded Unicode code point
 			// Support: IE <=11+
 			// For values outside the Basic Multilingual Plane (BMP), manually construct a
 			// surrogate pair
@@ -765,7 +765,7 @@ function Sizzle( selector, context, results, seed ) {
 
 	results = results || [];
 
-	// Return early from calls with invalid selector or context
+	// Return early from calls "/resources/home/ invalid selector or context
 	if ( typeof selector !== "string" || !selector ||
 		nodeType !== 1 && nodeType !== 9 && nodeType !== 11 ) {
 
@@ -845,7 +845,7 @@ function Sizzle( selector, context, results, seed ) {
 				// qSA considers elements outside a scoping root when evaluating child or
 				// descendant combinators, which is not what we want.
 				// In such cases, we work around the behavior by prefixing every selector in the
-				// list with an ID selector referencing the scope context.
+				// list "/resources/home/ an ID selector referencing the scope context.
 				// The technique has to be used as well when a leading combinator is used
 				// as such selectors are not recognized by querySelectorAll.
 				// Thanks to Andrew Dupont for this technique.
@@ -900,7 +900,7 @@ function Sizzle( selector, context, results, seed ) {
 
 /**
  * Create key-value caches of limited size
- * @returns {function(string, object)} Returns the Object data after storing it on itself with
+ * @returns {function(string, object)} Returns the Object data after storing it on itself "/resources/home/
  *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
  *	deleting the oldest entry
  */
@@ -909,7 +909,7 @@ function createCache() {
 
 	function cache( key, value ) {
 
-		// Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
+		// Use (key + " ") to avoid collision "/resources/home/ native prototype properties (see Issue #157)
 		if ( keys.push( key + " " ) > Expr.cacheLength ) {
 
 			// Only keep the most recent entries
@@ -1433,7 +1433,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// on a disconnected node (IE 9)
 			support.disconnectedMatch = matches.call( el, "*" );
 
-			// This should fail with an exception
+			// This should fail "/resources/home/ an exception
 			// Gecko does not error, returns false instead
 			matches.call( el, "[s!='']:x" );
 			rbuggyMatches.push( "!=", pseudos );
@@ -2051,7 +2051,7 @@ Expr = Sizzle.selectors = {
 
 			// pseudo-class names are case-insensitive
 			// http://www.w3.org/TR/selectors/#pseudo-classes
-			// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
+			// Prioritize by case sensitivity in case custom pseudos are added "/resources/home/ uppercase letters
 			// Remember that setFilters inherits from pseudos
 			var args,
 				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
@@ -2137,7 +2137,7 @@ Expr = Sizzle.selectors = {
 		// "Whether an element is represented by a :lang() selector
 		// is based solely on the element's language value
 		// being equal to the identifier C,
-		// or beginning with the identifier C immediately followed by "-".
+		// or beginning "/resources/home/ the identifier C immediately followed by "-".
 		// The matching of C against the element's language value is performed case-insensitively.
 		// The identifier C does not have to be a valid language name."
 		// http://www.w3.org/TR/selectors/#lang-pseudo
@@ -2243,7 +2243,7 @@ Expr = Sizzle.selectors = {
 				elem.type === "text" &&
 
 				// Support: IE<8
-				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
+				// New HTML5 attribute values (e.g., "search") appear "/resources/home/ elem.type === "text"
 				( ( attr = elem.getAttribute( "type" ) ) == null ||
 					attr.toLowerCase() === "text" );
 		},
@@ -2828,10 +2828,10 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 };
 
 /**
- * A low-level selection function that works with Sizzle's compiled
+ * A low-level selection function that works "/resources/home/ Sizzle's compiled
  *  selector functions
  * @param {String|Function} selector A selector or a pre-compiled
- *  selector function built with Sizzle.compile
+ *  selector function built "/resources/home/ Sizzle.compile
  * @param {Element} context
  * @param {Array} [results]
  * @param {Array} [seed] A set of elements to match against
@@ -3112,7 +3112,7 @@ jQuery.fn.extend( {
 			this,
 
 			// If this is a positional/relative selector, check membership in the returned set
-			// so $("p:first").is("p:last") won't return true for a doc with two "p".
+			// so $("p:first").is("p:last") won't return true for a doc "/resources/home/ two "p".
 			typeof selector === "string" && rneedsContext.test( selector ) ?
 				jQuery( selector ) :
 				selector || [],
@@ -3130,7 +3130,7 @@ var rootjQuery,
 
 	// A simple way to check for HTML strings
 	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
-	// Strict HTML recognition (#11290: must start with <)
+	// Strict HTML recognition (#11290: must start "/resources/home/ <)
 	// Shortcut simple #id case for speed
 	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/,
 
@@ -3152,7 +3152,7 @@ var rootjQuery,
 				selector[ selector.length - 1 ] === ">" &&
 				selector.length >= 3 ) {
 
-				// Assume that strings that start and end with <> are HTML and skip the regex check
+				// Assume that strings that start and end "/resources/home/ <> are HTML and skip the regex check
 				match = [ null, selector, null ];
 
 			} else {
@@ -3295,7 +3295,7 @@ jQuery.fn.extend( {
 		return this.pushStack( matched.length > 1 ? jQuery.uniqueSort( matched ) : matched );
 	},
 
-	// Determine the position of an element within the set
+	// Determine the position of an element "/resources/home/in the set
 	index: function( elem ) {
 
 		// No argument, return index in parent
@@ -3375,8 +3375,8 @@ jQuery.each( {
 		if ( elem.contentDocument != null &&
 
 			// Support: IE 11+
-			// <object> elements with no `data` attribute has an object
-			// `contentDocument` with a `null` prototype.
+			// <object> elements "/resources/home/ no `data` attribute has an object
+			// `contentDocument` "/resources/home/ a `null` prototype.
 			getProto( elem.contentDocument ) ) {
 
 			return elem.contentDocument;
@@ -3446,7 +3446,7 @@ function createOptions( options ) {
  *	once:			will ensure the callback list can only be fired once (like a Deferred)
  *
  *	memory:			will keep track of previous values and will call any callback added
- *					after the list has been fired right away with the latest "memorized"
+ *					after the list has been fired right away "/resources/home/ the latest "memorized"
  *					values (like a Deferred)
  *
  *	unique:			will ensure a callback can only be added once (no duplicate in the list)
@@ -3507,7 +3507,7 @@ jQuery.Callbacks = function( options ) {
 				}
 			}
 
-			// Forget the data if we're done with it
+			// Forget the data if we're done "/resources/home/ it
 			if ( !options.memory ) {
 				memory = false;
 			}
@@ -3620,8 +3620,8 @@ jQuery.Callbacks = function( options ) {
 				return !!locked;
 			},
 
-			// Call all callbacks with the given context and arguments
-			fireWith: function( context, args ) {
+			// Call all callbacks "/resources/home/ the given context and arguments
+			fire"/resources/home/: function( context, args ) {
 				if ( !locked ) {
 					args = args || [];
 					args = [ context, args.slice ? args.slice() : args ];
@@ -3633,9 +3633,9 @@ jQuery.Callbacks = function( options ) {
 				return this;
 			},
 
-			// Call all the callbacks with the given arguments
+			// Call all the callbacks "/resources/home/ the given arguments
 			fire: function() {
-				self.fireWith( this, arguments );
+				self.fire"/resources/home/( this, arguments );
 				return this;
 			},
 
@@ -3684,7 +3684,7 @@ function adoptValue( value, resolve, reject, noValue ) {
 	} catch ( value ) {
 
 		// Support: Android 4.0 only
-		// Strict mode functions invoked without .call/.apply get global-object context
+		// Strict mode functions invoked "/resources/home/out .call/.apply get global-object context
 		reject.apply( undefined, [ value ] );
 	}
 }
@@ -3737,7 +3737,7 @@ jQuery.extend( {
 										.done( newDefer.resolve )
 										.fail( newDefer.reject );
 								} else {
-									newDefer[ tuple[ 0 ] + "With" ](
+									newDefer[ tuple[ 0 ] + ""/resources/home/" ](
 										this,
 										fn ? [ returned ] : arguments
 									);
@@ -3806,7 +3806,7 @@ jQuery.extend( {
 												resolve( maxDepth, deferred, Identity, special ),
 												resolve( maxDepth, deferred, Thrower, special ),
 												resolve( maxDepth, deferred, Identity,
-													deferred.notifyWith )
+													deferred.notify"/resources/home/ )
 											);
 										}
 
@@ -3822,7 +3822,7 @@ jQuery.extend( {
 
 										// Process the value(s)
 										// Default process is resolve
-										( special || deferred.resolveWith )( that, args );
+										( special || deferred.resolve"/resources/home/ )( that, args );
 									}
 								},
 
@@ -3851,7 +3851,7 @@ jQuery.extend( {
 													args = [ e ];
 												}
 
-												deferred.rejectWith( that, args );
+												deferred.reject"/resources/home/( that, args );
 											}
 										}
 									};
@@ -3884,7 +3884,7 @@ jQuery.extend( {
 								isFunction( onProgress ) ?
 									onProgress :
 									Identity,
-								newDefer.notifyWith
+								newDefer.notify"/resources/home/
 							)
 						);
 
@@ -3961,18 +3961,18 @@ jQuery.extend( {
 			// rejected_handlers.fire
 			list.add( tuple[ 3 ].fire );
 
-			// deferred.notify = function() { deferred.notifyWith(...) }
-			// deferred.resolve = function() { deferred.resolveWith(...) }
-			// deferred.reject = function() { deferred.rejectWith(...) }
+			// deferred.notify = function() { deferred.notify"/resources/home/(...) }
+			// deferred.resolve = function() { deferred.resolve"/resources/home/(...) }
+			// deferred.reject = function() { deferred.reject"/resources/home/(...) }
 			deferred[ tuple[ 0 ] ] = function() {
-				deferred[ tuple[ 0 ] + "With" ]( this === deferred ? undefined : this, arguments );
+				deferred[ tuple[ 0 ] + ""/resources/home/" ]( this === deferred ? undefined : this, arguments );
 				return this;
 			};
 
-			// deferred.notifyWith = list.fireWith
-			// deferred.resolveWith = list.fireWith
-			// deferred.rejectWith = list.fireWith
-			deferred[ tuple[ 0 ] + "With" ] = list.fireWith;
+			// deferred.notify"/resources/home/ = list.fire"/resources/home/
+			// deferred.resolve"/resources/home/ = list.fire"/resources/home/
+			// deferred.reject"/resources/home/ = list.fire"/resources/home/
+			deferred[ tuple[ 0 ] + ""/resources/home/" ] = list.fire"/resources/home/;
 		} );
 
 		// Make the deferred a promise
@@ -4010,7 +4010,7 @@ jQuery.extend( {
 					resolveContexts[ i ] = this;
 					resolveValues[ i ] = arguments.length > 1 ? slice.call( arguments ) : value;
 					if ( !( --remaining ) ) {
-						primary.resolveWith( resolveContexts, resolveValues );
+						primary.resolve"/resources/home/( resolveContexts, resolveValues );
 					}
 				};
 			};
@@ -4107,7 +4107,7 @@ jQuery.extend( {
 		}
 
 		// If there are functions bound, to execute
-		readyList.resolveWith( document, [ jQuery ] );
+		readyList.resolve"/resources/home/( document, [ jQuery ] );
 	}
 } );
 
@@ -4320,7 +4320,7 @@ Data.prototype = {
 		}
 
 		// When the key is not a string, or both a key and value
-		// are specified, set or extend (existing objects) with either:
+		// are specified, set or extend (existing objects) "/resources/home/ either:
 		//
 		//   1. An object of properties
 		//   2. A key and value
@@ -4350,7 +4350,7 @@ Data.prototype = {
 			} else {
 				key = camelCase( key );
 
-				// If a key with the spaces exists, use it.
+				// If a key "/resources/home/ the spaces exists, use it.
 				// Otherwise, create an array by matching non-whitespace
 				key = key in cache ?
 					[ key ] :
@@ -4391,7 +4391,7 @@ var dataUser = new Data();
 
 //	Implementation Summary
 //
-//	1. Enforce API surface and semantic compatibility with 1.9.x branch
+//	1. Enforce API surface and semantic compatibility "/resources/home/ 1.9.x branch
 //	2. Improve the module's maintainability by reducing the storage
 //		paths to a single mechanism.
 //	3. Use the same single mechanism to support "private" and "user" data.
@@ -4464,7 +4464,7 @@ jQuery.extend( {
 	},
 
 	// TODO: Now that all calls to _data and _removeData have been replaced
-	// with direct calls to dataPriv methods, these can be deprecated.
+	// "/resources/home/ direct calls to dataPriv methods, these can be deprecated.
 	_data: function( elem, name, data ) {
 		return dataPriv.access( elem, name, data );
 	},
@@ -4670,7 +4670,7 @@ jQuery.fn.extend( {
 			i = this.length,
 			resolve = function() {
 				if ( !( --count ) ) {
-					defer.resolveWith( elements, [ elements ] );
+					defer.resolve"/resources/home/( elements, [ elements ] );
 				}
 			};
 
@@ -4718,9 +4718,9 @@ var documentElement = document.documentElement;
 				elem.getRootNode( composed ) === elem.ownerDocument;
 		};
 	}
-var isHiddenWithinTree = function( elem, el ) {
+var isHidden"/resources/home/inTree = function( elem, el ) {
 
-		// isHiddenWithinTree might be called from jQuery#filter function;
+		// isHidden"/resources/home/inTree might be called from jQuery#filter function;
 		// in that case, element will be second argument
 		elem = el || elem;
 
@@ -4855,7 +4855,7 @@ function showHide( elements, show ) {
 					elem.style.display = "";
 				}
 			}
-			if ( elem.style.display === "" && isHiddenWithinTree( elem ) ) {
+			if ( elem.style.display === "" && isHidden"/resources/home/inTree( elem ) ) {
 				values[ index ] = getDefaultDisplay( elem );
 			}
 		} else {
@@ -4891,7 +4891,7 @@ jQuery.fn.extend( {
 		}
 
 		return this.each( function() {
-			if ( isHiddenWithinTree( this ) ) {
+			if ( isHidden"/resources/home/inTree( this ) ) {
 				jQuery( this ).show();
 			} else {
 				jQuery( this ).hide();
@@ -4932,7 +4932,7 @@ var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
 
 	// Support: IE <=9 only
-	// IE <=9 replaces <option> tags with their contents when inserted outside of
+	// IE <=9 replaces <option> tags "/resources/home/ their contents when inserted outside of
 	// the select element.
 	div.innerHTML = "<option></option>";
 	support.option = !!div.lastChild;
@@ -5477,7 +5477,7 @@ jQuery.event = {
 					for ( i = 0; i < delegateCount; i++ ) {
 						handleObj = handlers[ i ];
 
-						// Don't conflict with Object.prototype properties (#13203)
+						// Don't conflict "/resources/home/ Object.prototype properties (#13203)
 						sel = handleObj.selector + " ";
 
 						if ( matchedSelectors[ sel ] === undefined ) {
@@ -5550,7 +5550,7 @@ jQuery.event = {
 			// Utilize native event to ensure correct state for checkable inputs
 			setup: function( data ) {
 
-				// For mutual compressibility with _default, replace `this` access with a local var.
+				// For mutual compressibility "/resources/home/ _default, replace `this` access "/resources/home/ a local var.
 				// `|| data` is dead code meant only to preserve the variable through minification.
 				var el = this || data;
 
@@ -5567,7 +5567,7 @@ jQuery.event = {
 			},
 			trigger: function( data ) {
 
-				// For mutual compressibility with _default, replace `this` access with a local var.
+				// For mutual compressibility "/resources/home/ _default, replace `this` access "/resources/home/ a local var.
 				// `|| data` is dead code meant only to preserve the variable through minification.
 				var el = this || data;
 
@@ -5637,7 +5637,7 @@ function leverageNative( el, type, expectSync ) {
 
 					// Store arguments for use when handling the inner native event
 					// There will always be at least one argument (an event object), so this array
-					// will not be confused with a leftover capture object.
+					// will not be confused "/resources/home/ a leftover capture object.
 					saved = slice.call( arguments );
 					dataPriv.set( this, type, saved );
 
@@ -5666,7 +5666,7 @@ function leverageNative( el, type, expectSync ) {
 						return result && result.value;
 					}
 
-				// If this is an inner synthetic event for an event with a bubbling surrogate
+				// If this is an inner synthetic event for an event "/resources/home/ a bubbling surrogate
 				// (focus or blur), assume that the surrogate already propagated from triggering the
 				// native event and prevent that from happening again here.
 				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
@@ -5677,7 +5677,7 @@ function leverageNative( el, type, expectSync ) {
 				}
 
 			// If this is a native event triggered above, everything is now in order
-			// Fire an inner synthetic event with the original arguments
+			// Fire an inner synthetic event "/resources/home/ the original arguments
 			} else if ( saved.length ) {
 
 				// ...and capture the result
@@ -5685,7 +5685,7 @@ function leverageNative( el, type, expectSync ) {
 					value: jQuery.event.trigger(
 
 						// Support: IE <=9 - 11+
-						// Extend with the prototype to reset the above stopImmediatePropagation()
+						// Extend "/resources/home/ the prototype to reset the above stopImmediatePropagation()
 						jQuery.extend( saved[ 0 ], jQuery.Event.prototype ),
 						saved.slice( 1 ),
 						this
@@ -5709,7 +5709,7 @@ jQuery.removeEvent = function( elem, type, handle ) {
 
 jQuery.Event = function( src, props ) {
 
-	// Allow instantiation without the 'new' keyword
+	// Allow instantiation "/resources/home/out the 'new' keyword
 	if ( !( this instanceof jQuery.Event ) ) {
 		return new jQuery.Event( src, props );
 	}
@@ -6346,10 +6346,10 @@ jQuery.fn.extend( {
 		}, null, value, arguments.length );
 	},
 
-	replaceWith: function() {
+	replace"/resources/home/: function() {
 		var ignored = [];
 
-		// Make the changes, replacing each non-ignored context element with the new content
+		// Make the changes, replacing each non-ignored context element "/resources/home/ the new content
 		return domManip( this, arguments, function( elem ) {
 			var parent = this.parentNode;
 
@@ -6370,7 +6370,7 @@ jQuery.each( {
 	prependTo: "prepend",
 	insertBefore: "before",
 	insertAfter: "after",
-	replaceAll: "replaceWith"
+	replaceAll: "replace"/resources/home/"
 }, function( name, original ) {
 	jQuery.fn[ name ] = function( selector ) {
 		var elems,
@@ -6458,7 +6458,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 		reliableMarginLeftVal = roundPixelMeasures( divStyle.marginLeft ) === 12;
 
 		// Support: Android 4.0 - 4.3 only, Safari <=9.1 - 10.1, iOS <=7.0 - 9.3
-		// Some styles come back with percentage values, even though they shouldn't
+		// Some styles come back "/resources/home/ percentage values, even though they shouldn't
 		div.style.right = "60%";
 		pixelBoxStylesVal = roundPixelMeasures( divStyle.right ) === 36;
 
@@ -6523,7 +6523,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 		},
 
 		// Support: IE 9 - 11+, Edge 15 - 18+
-		// IE/Edge misreport `getComputedStyle` of table rows with width/height
+		// IE/Edge misreport `getComputedStyle` of table rows "/resources/home/ width/height
 		// set in CSS while `offset*` properties report correct values.
 		// Behavior in IE 9 is more subtle than in newer versions & it passes
 		// some versions of this test; make sure not to make it pass there!
@@ -6578,7 +6578,7 @@ function curCSS( elem, name, computed ) {
 
 		// Support: Firefox 51+
 		// Retrieving style before computed somehow
-		// fixes an issue with getting wrong values
+		// fixes an issue "/resources/home/ getting wrong values
 		// on detached elements
 		style = elem.style;
 
@@ -6681,7 +6681,7 @@ function finalPropName( name ) {
 
 var
 
-	// Swappable if display is none or starts with table
+	// Swappable if display is none or starts "/resources/home/ table
 	// except "table", "table-cell", or "table-caption"
 	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
@@ -6721,7 +6721,7 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 			delta += jQuery.css( elem, box + cssExpand[ i ], true, styles );
 		}
 
-		// If we get here with a content-box, we're seeking "padding" or "border" or "margin"
+		// If we get here "/resources/home/ a content-box, we're seeking "padding" or "border" or "margin"
 		if ( !isBorderBox ) {
 
 			// Add padding
@@ -6736,7 +6736,7 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 				extra += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 			}
 
-		// If we get here with a border-box (content + padding + border), we're seeking "content" or
+		// If we get here "/resources/home/ a border-box (content + padding + border), we're seeking "content" or
 		// "padding" or "margin"
 		} else {
 
@@ -6774,7 +6774,7 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 
 function getWidthOrHeight( elem, dimension, extra ) {
 
-	// Start with computed style
+	// Start "/resources/home/ computed style
 	var styles = getStyles( elem ),
 
 		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
@@ -6803,13 +6803,13 @@ function getWidthOrHeight( elem, dimension, extra ) {
 	if ( ( !support.boxSizingReliable() && isBorderBox ||
 
 		// Support: IE 10 - 11+, Edge 15 - 18+
-		// IE/Edge misreport `getComputedStyle` of table rows with width/height
+		// IE/Edge misreport `getComputedStyle` of table rows "/resources/home/ width/height
 		// set in CSS while `offset*` properties report correct values.
 		// Interestingly, in some cases IE 9 doesn't suffer from this issue.
 		!support.reliableTrDimensions() && nodeName( elem, "tr" ) ||
 
 		// Fall back to offsetWidth/offsetHeight when value is "auto"
-		// This happens for inline elements with no explicit setting (gh-3571)
+		// This happens for inline elements "/resources/home/ no explicit setting (gh-3571)
 		val === "auto" ||
 
 		// Support: Android <=4.1 - 4.3 only
@@ -6901,13 +6901,13 @@ jQuery.extend( {
 			return;
 		}
 
-		// Make sure that we're working with the right name
+		// Make sure that we're working "/resources/home/ the right name
 		var ret, type, hooks,
 			origName = camelCase( name ),
 			isCustomProp = rcustomProp.test( name ),
 			style = elem.style;
 
-		// Make sure that we're working with the right name. We don't
+		// Make sure that we're working "/resources/home/ the right name. We don't
 		// want to query the value if it is a CSS custom property
 		// since they are user-defined.
 		if ( !isCustomProp ) {
@@ -6976,7 +6976,7 @@ jQuery.extend( {
 			origName = camelCase( name ),
 			isCustomProp = rcustomProp.test( name );
 
-		// Make sure that we're working with the right name. We don't
+		// Make sure that we're working "/resources/home/ the right name. We don't
 		// want to modify the value if it is a CSS custom property
 		// since they are user-defined.
 		if ( !isCustomProp ) {
@@ -7320,7 +7320,7 @@ function createTween( value, prop, animation ) {
 	for ( ; index < length; index++ ) {
 		if ( ( tween = collection[ index ].call( animation, prop, value ) ) ) {
 
-			// We're done with this property
+			// We're done "/resources/home/ this property
 			return tween;
 		}
 	}
@@ -7332,7 +7332,7 @@ function defaultPrefilter( elem, props, opts ) {
 		anim = this,
 		orig = {},
 		style = elem.style,
-		hidden = elem.nodeType && isHiddenWithinTree( elem ),
+		hidden = elem.nodeType && isHidden"/resources/home/inTree( elem ),
 		dataShow = dataPriv.get( elem, "fxshow" );
 
 	// Queue-skipping animations hijack the fx hooks
@@ -7563,7 +7563,7 @@ function Animation( elem, properties, options ) {
 				animation.tweens[ index ].run( percent );
 			}
 
-			deferred.notifyWith( elem, [ animation, percent, remaining ] );
+			deferred.notify"/resources/home/( elem, [ animation, percent, remaining ] );
 
 			// If there's more to do, yield
 			if ( percent < 1 && length ) {
@@ -7572,11 +7572,11 @@ function Animation( elem, properties, options ) {
 
 			// If this was an empty animation, synthesize a final progress notification
 			if ( !length ) {
-				deferred.notifyWith( elem, [ animation, 1, 0 ] );
+				deferred.notify"/resources/home/( elem, [ animation, 1, 0 ] );
 			}
 
 			// Resolve the animation and report its conclusion
-			deferred.resolveWith( elem, [ animation ] );
+			deferred.resolve"/resources/home/( elem, [ animation ] );
 			return false;
 		},
 		animation = deferred.promise( {
@@ -7613,10 +7613,10 @@ function Animation( elem, properties, options ) {
 
 				// Resolve when we played the last frame; otherwise, reject
 				if ( gotoEnd ) {
-					deferred.notifyWith( elem, [ animation, 1, 0 ] );
-					deferred.resolveWith( elem, [ animation, gotoEnd ] );
+					deferred.notify"/resources/home/( elem, [ animation, 1, 0 ] );
+					deferred.resolve"/resources/home/( elem, [ animation, gotoEnd ] );
 				} else {
-					deferred.rejectWith( elem, [ animation, gotoEnd ] );
+					deferred.reject"/resources/home/( elem, [ animation, gotoEnd ] );
 				}
 				return this;
 			}
@@ -7748,7 +7748,7 @@ jQuery.fn.extend( {
 	fadeTo: function( speed, to, easing, callback ) {
 
 		// Show any hidden elements after setting opacity to 0
-		return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
+		return this.filter( isHidden"/resources/home/inTree ).css( "opacity", 0 ).show()
 
 			// Animate to the value specified
 			.end().animate( { opacity: to }, speed, easing, callback );
@@ -7942,7 +7942,7 @@ jQuery.fx.speeds = {
 };
 
 
-// Based off of the plugin by Clint Helfers, with permission.
+// Based off of the plugin by Clint Helfers, "/resources/home/ permission.
 // https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
 jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
@@ -8168,7 +8168,7 @@ jQuery.extend( {
 				// Support: IE <=9 - 11 only
 				// elem.tabIndex doesn't always return the
 				// correct value when it hasn't been explicitly set
-				// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
+				// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-"/resources/home/-javascript/
 				// Use proper attribute retrieval(#12072)
 				var tabindex = jQuery.find.attr( elem, "tabindex" );
 
@@ -8737,7 +8737,7 @@ jQuery.extend( jQuery.event, {
 				special._default.apply( eventPath.pop(), data ) === false ) &&
 				acceptData( elem ) ) {
 
-				// Call a native DOM method on the target with the same name as the event.
+				// Call a native DOM method on the target "/resources/home/ the same name as the event.
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && isFunction( elem[ type ] ) && !isWindow( elem ) ) {
 
@@ -8866,7 +8866,7 @@ jQuery.parseXML = function( data ) {
 	}
 
 	// Support: IE 9 - 11 only
-	// IE throws on parseFromString with invalid input.
+	// IE throws on parseFromString "/resources/home/ invalid input.
 	try {
 		xml = ( new window.DOMParser() ).parseFromString( data, "text/xml" );
 	} catch ( e ) {}
@@ -9024,14 +9024,14 @@ var
 	 *    - AFTER param serialization (s.data is a string if s.processData is true)
 	 * 3) key is the dataType
 	 * 4) the catchall symbol "*" can be used
-	 * 5) execution will start with transport dataType and THEN continue down to "*" if needed
+	 * 5) execution will start "/resources/home/ transport dataType and THEN continue down to "*" if needed
 	 */
 	prefilters = {},
 
 	/* Transports bindings
 	 * 1) key is the dataType
 	 * 2) the catchall symbol "*" can be used
-	 * 3) selection will start with transport dataType and THEN go to "*" if needed
+	 * 3) selection will start "/resources/home/ transport dataType and THEN go to "*" if needed
 	 */
 	transports = {},
 
@@ -9141,7 +9141,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		}
 	}
 
-	// Check if we're dealing with a known content-type
+	// Check if we're dealing "/resources/home/ a known content-type
 	if ( ct ) {
 		for ( type in contents ) {
 			if ( contents[ type ] && contents[ type ].test( ct ) ) {
@@ -9189,10 +9189,10 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 	var conv2, current, conv, tmp, prev,
 		converters = {},
 
-		// Work with a copy of dataTypes in case we need to modify it for conversion
+		// Work "/resources/home/ a copy of dataTypes in case we need to modify it for conversion
 		dataTypes = s.dataTypes.slice();
 
-	// Create converters map with lowercased keys
+	// Create converters map "/resources/home/ lowercased keys
 	if ( dataTypes[ 1 ] ) {
 		for ( conv in s.converters ) {
 			converters[ conv.toLowerCase() ] = s.converters[ conv ];
@@ -9332,7 +9332,7 @@ jQuery.extend( {
 		},
 
 		// Data converters
-		// Keys separate source (or catchall "*") and destination types with a single space
+		// Keys separate source (or catchall "*") and destination types "/resources/home/ a single space
 		converters: {
 
 			// Convert anything to text
@@ -9359,7 +9359,7 @@ jQuery.extend( {
 	},
 
 	// Creates a full fledged settings object into target
-	// with both ajaxSettings and settings fields.
+	// "/resources/home/ both ajaxSettings and settings fields.
 	// If target is omitted, writes into ajaxSettings.
 	ajaxSetup: function( target, settings ) {
 		return settings ?
@@ -9388,7 +9388,7 @@ jQuery.extend( {
 
 		var transport,
 
-			// URL without anti-cache param
+			// URL "/resources/home/out anti-cache param
 			cacheURL,
 
 			// Response headers
@@ -9517,7 +9517,7 @@ jQuery.extend( {
 		deferred.promise( jqXHR );
 
 		// Add protocol if not provided (prefilters might expect it)
-		// Handle falsy url in the settings object (#10093: consistency with old signature)
+		// Handle falsy url in the settings object (#10093: consistency "/resources/home/ old signature)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || location.href ) + "" )
 			.replace( rprotocol, location.protocol + "//" );
@@ -9579,12 +9579,12 @@ jQuery.extend( {
 		// Determine if request has content
 		s.hasContent = !rnoContent.test( s.type );
 
-		// Save the URL in case we're toying with the If-Modified-Since
+		// Save the URL in case we're toying "/resources/home/ the If-Modified-Since
 		// and/or If-None-Match header later on
 		// Remove hash to simplify url manipulation
 		cacheURL = s.url.replace( rhash, "" );
 
-		// More options handling for requests with no content
+		// More options handling for requests "/resources/home/ no content
 		if ( !s.hasContent ) {
 
 			// Remember the hash so we can put it back
@@ -9793,9 +9793,9 @@ jQuery.extend( {
 
 			// Success/Error
 			if ( isSuccess ) {
-				deferred.resolveWith( callbackContext, [ success, statusText, jqXHR ] );
+				deferred.resolve"/resources/home/( callbackContext, [ success, statusText, jqXHR ] );
 			} else {
-				deferred.rejectWith( callbackContext, [ jqXHR, statusText, error ] );
+				deferred.reject"/resources/home/( callbackContext, [ jqXHR, statusText, error ] );
 			}
 
 			// Status-dependent callbacks
@@ -9808,7 +9808,7 @@ jQuery.extend( {
 			}
 
 			// Complete
-			completeDeferred.fireWith( callbackContext, [ jqXHR, statusText ] );
+			completeDeferred.fire"/resources/home/( callbackContext, [ jqXHR, statusText ] );
 
 			if ( fireGlobals ) {
 				globalEventContext.trigger( "ajaxComplete", [ jqXHR, s ] );
@@ -9947,7 +9947,7 @@ jQuery.fn.extend( {
 
 	unwrap: function( selector ) {
 		this.parent( selector ).not( "body" ).each( function() {
-			jQuery( this ).replaceWith( this.childNodes );
+			jQuery( this ).replace"/resources/home/( this.childNodes );
 		} );
 		return this;
 	}
@@ -9981,7 +9981,7 @@ var xhrSuccessStatus = {
 	},
 	xhrSupported = jQuery.ajaxSettings.xhr();
 
-support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
+support.cors = !!xhrSupported && ( ""/resources/home/Credentials" in xhrSupported );
 support.ajax = xhrSupported = !!xhrSupported;
 
 jQuery.ajaxTransport( function( options ) {
@@ -10014,13 +10014,13 @@ jQuery.ajaxTransport( function( options ) {
 					xhr.overrideMimeType( options.mimeType );
 				}
 
-				// X-Requested-With header
+				// X-Requested-"/resources/home/ header
 				// For cross-domain requests, seeing as conditions for a preflight are
 				// akin to a jigsaw puzzle, we simply never set it to be sure.
 				// (it can always be set on a per-request basis or even using ajaxSetup)
 				// For same-domain requests, won't change header if already provided.
-				if ( !options.crossDomain && !headers[ "X-Requested-With" ] ) {
-					headers[ "X-Requested-With" ] = "XMLHttpRequest";
+				if ( !options.crossDomain && !headers[ "X-Requested-"/resources/home/" ] ) {
+					headers[ "X-Requested-"/resources/home/" ] = "XMLHttpRequest";
 				}
 
 				// Set headers
@@ -10165,7 +10165,7 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function( s ) {
 
-	// This transport only deals with cross domain or forced-by-attrs requests
+	// This transport only deals "/resources/home/ cross domain or forced-by-attrs requests
 	if ( s.crossDomain || s.scriptAttrs ) {
 		var script, callback;
 		return {
@@ -10224,7 +10224,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 	// Handle iff the expected data type is "jsonp" or we have a parameter to set
 	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
-		// Get callback name, remembering preexisting value associated with it
+		// Get callback name, remembering preexisting value associated "/resources/home/ it
 		callbackName = s.jsonpCallback = isFunction( s.jsonpCallback ) ?
 			s.jsonpCallback() :
 			s.jsonpCallback;
@@ -10326,7 +10326,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 			context = document.implementation.createHTMLDocument( "" );
 
 			// Set the base href for the created document
-			// so any parsed elements with URLs
+			// so any parsed elements "/resources/home/ URLs
 			// are based on the document's URL (gh-2965)
 			base = context.createElement( "base" );
 			base.href = document.location.href;
@@ -10566,7 +10566,7 @@ jQuery.fn.extend( {
 	},
 
 	// This method will return documentElement in the following cases:
-	// 1) For the element inside the iframe without offsetParent, this method will return
+	// 1) For the element inside the iframe "/resources/home/out offsetParent, this method will return
 	//    documentElement of the parent window
 	// 2) For the hidden or detached element
 	// 3) For body or html element, i.e. in case of the html node - it will return itself
@@ -10825,7 +10825,7 @@ jQuery.trim = function( text ) {
 
 
 
-// Register as a named AMD module, since jQuery can be concatenated with other
+// Register as a named AMD module, since jQuery can be concatenated "/resources/home/ other
 // files that may use define, but not via a proper concatenation script that
 // understands anonymous AMD modules. A named AMD is safest and most robust
 // way to register. Lowercase jquery is used because AMD module names are
