@@ -34,10 +34,10 @@
           <!-- /.card-header -->
           <!-- form start -->
           <!-- 첨부파일을 전송할때 enctype=필수 없으면, 첨부파일이 전송X -->
-          <form name="form_write" method="post" action="/admin/bbs_type/bbs_type_insert/" enctype="multipart/form-data">
+          <form name="form_write" method="post" action="/admin/bbs_type/bbs_type_insert" enctype="multipart/form-data">
             <div class="card-body">
               <div class="form-group">
-              <!-- PK고유키, 식별자는 중복체크는 생략 -->
+                <!-- PK고유키,식별자는 중복체크는 생략  -->
                 <label for="board_type">게시판타입</label>
                 <input value="" name="board_type" type="text" style="ime-mode:disabled" class="form-control" id="board_type" placeholder="게시판타입을 입력해 주세요" required>
               </div>
