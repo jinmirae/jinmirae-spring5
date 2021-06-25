@@ -15,7 +15,7 @@ import com.edu.vo.PageVO;
 
 /**
  * 이 클래스는 DAO메서드를 호출하는 기능을 합니다.
- * @author 김일국
+ * @author 진미래
  *
  */
 @Service //@애노테이션을 붙이면 스프링 빈으로 등록이 됨.
@@ -48,7 +48,7 @@ public class BoardServiceImpl implements IF_BoardService {
 		boardDAO.deleteAttachAll(bno);
 		//댓글 DAO에서 deleteReplyAll실행
 		replyDAO.deleteReplyAll(bno);
-		boardDAO.deleteBoard(bno);
+		boardDAO.deleteBoard(bno);  
 	}
 
 	@Transactional //All or NotAll
