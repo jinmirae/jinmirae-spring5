@@ -11,11 +11,11 @@ import com.edu.vo.ReplyVO;
  *
  */
 public interface IF_ReplyDAO {
-	public void deleteRepiyAll(Integer rno) throws Exception;
-	public void deleteReply(ReplyVO replyVO) throws Exception; 
+	public void deleteReplyAll(Integer bno) throws Exception;
+	public void deleteReply(ReplyVO replyVO) throws Exception;
 	public void updateReply(ReplyVO replyVO) throws Exception;
-	public void replyCountUpdate(Integer bno, int count) throws Exception; 
-	public void insertReply(ReplyVO replyVO) throws Exception;//replyVO jsp폼에서 
+	public void replyCountUpdate(Integer bno, int count) throws Exception;
+	public void insertReply(ReplyVO replyVO) throws Exception;//replyVO jsp폼에서
 	public int countReply(Integer bno) throws Exception;
 	public List<ReplyVO> selectReply(PageVO pageVO) throws Exception;
 }
