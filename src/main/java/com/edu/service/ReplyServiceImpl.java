@@ -26,24 +26,22 @@ public class ReplyServiceImpl implements IF_ReplyService {
 	public void deleteReply(ReplyVO replyVO) throws Exception {
 		// TODO 2개의 DAO를 호출(실행)
 		replyDAO.deleteReply(replyVO);
-		//g현재 게시물 고유번호 bno가 필요.
+		// 현재 게시물 고유번호 bno가 필요.
 		replyDAO.replyCountUpdate(replyVO.getBno(), -1);
 	}
 
-	
 	@Override
 	public void updateReply(ReplyVO replyVO) throws Exception {
-		// TODO
+		// TODO 
 		replyDAO.updateReply(replyVO);
 	}
 
-	@Transactional//ALL or NotAll 모 아니면 도
+	@Transactional // ALL or NotALL 모 아니면 도
 	@Override
 	public void insertReply(ReplyVO replyVO) throws Exception {
 		// TODO 2개의 DAO를 호출(실행)
 		replyDAO.insertReply(replyVO);
 		replyDAO.replyCountUpdate(replyVO.getBno(), 1);
-		
 	}
 
 	@Override
