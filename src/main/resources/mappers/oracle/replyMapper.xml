@@ -40,7 +40,7 @@ where bno = #{bno}
 select count(*) from tbl_reply where bno = #{bno}
 </select>
 
-<select id="selectRply" resultType="com.edu.vo.ReplyVO">
+<select id="selectReply" resultType="com.edu.vo.ReplyVO">
 select rnum, tableB.* from
 (
 	select rownum AS rnum, tableA.* from
@@ -49,8 +49,8 @@ select rnum, tableB.* from
 		where bno = #{bno}
 		order by rno desc
 	) tableA
-<![CDATA[]
-	where rownum < #{quereyStartNo}+#{queryPerPageNum}
+<![CDATA[
+	where rownum < #{queryStartNo}+#{queryPerPageNum}
 )tableB
 where rnum > #{queryStartNo}
 ]]>
