@@ -439,7 +439,7 @@ $(document).ready(function(){
 	});
 });
 </script>
-
+ 
 <script>
 // 댓글 리스트에서 수정 버튼클릭시 현재 선택한 값을 모달창에 보여주는 것을 구현(아래)
 $(document).ready(function(){
