@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ include file="./include/header.jsp" %>
 <!-- 게시판용 CSS 임포트 -->
-<link rel="stylesheet" href="/resources/home//css/board.css">
+<link rel="stylesheet" href="/resources/home/css/board.css">
 
-<!-- 메인 콘텐츠영역만 변경됩니다. -->
-<div id="conrainer">    
+<!-- 메인콘텐츠영역 만 변경됩니다. -->
+<div id="container">
     <!-- 메인상단위치표시영역 -->
     <div class="location_area customer">
         <div class="box_inner">
@@ -44,8 +44,7 @@
         <!-- //폼영역 -->
     </div>
     <!-- //메인본문영역 -->
-
 </div>
-<!-- //메인 콘텐츠영역 -->
+<!-- //메인콘텐츠영역 -->
 
 <%@ include file="./include/footer.jsp" %>
