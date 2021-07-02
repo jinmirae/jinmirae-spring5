@@ -131,10 +131,18 @@ $(document).ready(function() {
 <script>
 $(document).ready(function(){
 	$("#btn_leave").click(function(){
+		if(confirm('정말로 탈퇴하시겠습니까?')) { 
 		//alert("삭제버튼 준비중 입니다.");
 		var form_leave = $("form[name='join_form']");
-		alert($("select[name='enabled']").val());
+		$("option:eq(0)","select[name='enabled']").val("false")//
+		//$("select[name='enabled']").val(false);//에러Set input태그O
+		alert($("select[name='enabled']").val());//Get
 		//위 값을 false, 0 둘중 1개 로 변경 후 submit예정.
+		form_leave.attr("action","/member/mypage_leave")
+		form_leave.submit();//삭제는 아니고, enabled 필드값을 수정합니다.
+		//탈퇴를 했다면, 로그아웃처리도 같이 되어야 함.
+		//location.replace("/logout");//크롬에서는 오동작해서 자바스크립트처리는 않함.
+		}
 	});
 });
 </script>

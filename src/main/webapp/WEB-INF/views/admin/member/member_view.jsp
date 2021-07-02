@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http:/java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http:/java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../include/header.jsp" %>
 
 <!-- Content Wrapper. Contains page content -->
@@ -53,7 +53,7 @@
                 <c:out value="${memberVO.email}" />
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">가입대기</label>
+                <label for="exampleInputPassword1">로그인여부</label>
                 <br>
                 <c:out value="${memberVO.enabled}" />
               </div>
