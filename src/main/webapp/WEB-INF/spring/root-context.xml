@@ -40,30 +40,30 @@
 	<!-- 위 생성DB파일에 더미데이터 생성시키는 스크립트문장(아래) 최초1회만 실행 -->
 	<!-- hsql이 아닌 다른 DB일때는 주석처리 필수 -->
 	
-	<jdbc:initialize-database data-source="dataSource" ignore-failures="DROPS"> 
+	<!-- <jdbc:initialize-database data-source="dataSource" ignore-failures="DROPS"> 
 		<jdbc:script location="classpath:/db_script/hsql_file.sql" /> 
-	</jdbc:initialize-database>
+	</jdbc:initialize-database> -->
 	
 	<!-- hsql데이터베이스 매니저실행 /embeded/hsql_file.db를 매니저에서 불러옴 
 		배포시는 항상 주석처리 합니다.
 	-->
-	
+	<!-- 
 	<bean depends-on="dataSource-hsql_local"
 	class="org.springframework.beans.factory.config.MethodInvokingBean">
 	<property name="targetClass" value="org.hsqldb.util.DatabaseManagerSwing" />
 	<property name="targetMethod" value="main" />
 	<property name="arguments">
 		<list>
-			<value>--url</value>
+			<value>- -url</value>
 			<value>jdbc:hsqldb:file:c:/embeded/hsql_file.db;hsqldb.lock_file=false</value>
-			<value>--user</value>
+			<value>- -user</value>
 			<value>sa</value>
-			<value>--password</value>
+			<value>- -password</value>
 			<value></value>
 		</list>
 	</property>
 	</bean>
-	
+	 -->
 	<!-- 로컬(PC) 오라클 jdbc 드라이버 설정(아래) -->
 	<!-- 
 	<bean id="dataSource-oracle_local" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
