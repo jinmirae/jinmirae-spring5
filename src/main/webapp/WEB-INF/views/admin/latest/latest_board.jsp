@@ -33,13 +33,13 @@
 				<c:forEach var="boardVO" items="${latestBoard}">
 					<tr>
 	                  <td><a href="/admin/board/board_view?bno=${boardVO.bno}&page=1">
-	                  ${boardVO.title}
+	                  ${boardVO.title}[${boardVO.reply_count}]
 	                  </a></td>
 	                  <td>${boardVO.writer}</td>
 	                  <td><span class="badge badge-success">${boardVO.view_count}</span></td>
 	                  <td>
 	                    <div class="sparkbar" data-color="#00a65a" data-height="20">
-	                    <fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value=""/>
+	                    <fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${boardVO.reg_date}"/>
 	                    </div>
 	                  </td>
 	                </tr>
