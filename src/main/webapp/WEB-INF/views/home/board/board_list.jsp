@@ -23,7 +23,7 @@
 		<!-- 메인본문영역 -->
 		<div class="bodytext_area box_inner">
 			<!-- 검색폼영역 -->
-			<form id="search_form" name="search_form" action="/home/board/board_list.html" class="minisrch_form">
+			<form id="search_form" name="search_form" action="/home/board/board_list" class="minisrch_form">
 				<fieldset>
 					<legend>검색</legend>
 					<input value="${session_search_keyword}" name="search_keyword" type="text" class="tbox" title="검색어를 입력해주세요" placeholder="검색어를 입력해주세요">
