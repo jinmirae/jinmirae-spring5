@@ -115,7 +115,7 @@ $.validator.addMethod( "accept", function( value, element, param ) {
 	// Either return true because we've validated each file, or because the
 	// browser does not support element.files and the FileList feature
 	return true;
-}, $.validator.format( "Please enter a value "/resources/home/ a valid mimetype." ) );
+}, $.validator.format( "Please enter a value with a valid mimetype." ) );
 
 $.validator.addMethod( "alphanumeric", function( value, element ) {
 	return this.optional( element ) || /^\w+$/i.test( value );
@@ -124,7 +124,7 @@ $.validator.addMethod( "alphanumeric", function( value, element ) {
 /*
  * Dutch bank account numbers (not 'giro' numbers) have 9 digits
  * and pass the '11 check'.
- * We accept the notation "/resources/home/ spaces, as that is common.
+ * We accept the notation with spaces, as that is common.
  * acceptable: 123456789 or 12 34 56 789
  */
 $.validator.addMethod( "bankaccountNL", function( value, element ) {
@@ -165,9 +165,9 @@ $.validator.addMethod( "bankorgiroaccountNL", function( value, element ) {
  * - First 4 characters - bank code (only letters)
  * - Next 2 characters - ISO 3166-1 alpha-2 country code (only letters)
  * - Next 2 characters - location code (letters and digits)
- *   a. shall not start "/resources/home/ '0' or '1'
+ *   a. shall not start with '0' or '1'
  *   b. second character must be a letter ('O' is not allowed) or digit ('0' for test (therefore not allowed), '1' denoting passive participant, '2' typically reverse-billing)
- * - Last 3 characters - branch code, optional (shall not start "/resources/home/ 'X' except in case of 'XXX' for primary office) (letters and digits)
+ * - Last 3 characters - branch code, optional (shall not start with 'X' except in case of 'XXX' for primary office) (letters and digits)
  */
 $.validator.addMethod( "bic", function( value, element ) {
     return this.optional( element ) || /^([A-Z]{6}[A-Z2-9][A-NP-Z1-9])(X{3}|[A-WY-Z0-9][A-Z0-9]{2})?$/.test( value.toUpperCase() );
@@ -185,7 +185,7 @@ $.validator.addMethod( "bic", function( value, element ) {
  *
  * T: 1 character. Kind of Organization Letter: [ABCDEFGHJKLMNPQRSUVW]
  * P: 2 characters. Province.
- * N: 5 characters. Secuencial Number "/resources/home/in the province.
+ * N: 5 characters. Secuencial Number within the province.
  * C: 1 character. Control Digit: [0-9A-J].
  *
  * [ T ]: Kind of Organizations. Possible values:
@@ -591,13 +591,13 @@ $.validator.addMethod( "creditcardtypes", function( value, element, param ) {
 }, "Please enter a valid credit card number." );
 
 /**
- * Validates currencies "/resources/home/ any given symbols by @jameslouiz
+ * Validates currencies with any given symbols by @jameslouiz
  * Symbols can be optional or required. Symbols required by default
  *
  * Usage examples:
  *  currency: ["£", false] - Use false for soft currency validation
  *  currency: ["$", false]
- *  currency: ["RM", false] - also works "/resources/home/ text based symbols such as "RM" - Malaysia Ringgit etc
+ *  currency: ["RM", false] - also works with text based symbols such as "RM" - Malaysia Ringgit etc
  *
  *  <input class="currencyInput" name="currencyInput">
  *
@@ -684,7 +684,7 @@ $.validator.addMethod( "dateNL", function( value, element ) {
 $.validator.addMethod( "extension", function( value, element, param ) {
 	param = typeof param === "string" ? param.replace( /,/g, "|" ) : "png|jpe?g|gif";
 	return this.optional( element ) || value.match( new RegExp( "\\.(" + param + ")$", "i" ) );
-}, $.validator.format( "Please enter a value "/resources/home/ a valid extension." ) );
+}, $.validator.format( "Please enter a value with a valid extension." ) );
 
 /**
  * Dutch giro account numbers (not bank numbers) have max 7 digits
@@ -894,7 +894,7 @@ $.validator.addMethod( "lettersonly", function( value, element ) {
 	return this.optional( element ) || /^[a-z]+$/i.test( value );
 }, "Letters only please" );
 
-$.validator.addMethod( "letters"/resources/home/basicpunc", function( value, element ) {
+$.validator.addMethod( "letterswithbasicpunc", function( value, element ) {
 	return this.optional( element ) || /^[a-z\-.,()'"\s]+$/i.test( value );
 }, "Letters or punctuation only please" );
 
@@ -965,7 +965,7 @@ $.validator.addMethod( "mobileRU", function( phone_number, element ) {
 }, "Please specify a valid mobile number" );
 
 /* For UK phone functions, do the following server side processing:
- * Compare original input "/resources/home/ this RegEx pattern:
+ * Compare original input with this RegEx pattern:
  * ^\(?(?:(?:00\)?[\s\-]?\(?|\+)(44)\)?[\s\-]?\(?(?:0\)?[\s\-]?\(?)?|0)([1-9]\d{1,4}\)?[\s\d\-]+)$
  * Extract $1 and set $prefix to '+44<space>' if $1 is '44', otherwise set $prefix to '0'
  * Extract $2 and remove hyphens, spaces and parentheses. Phone number is combined $prefix and $2.
@@ -1044,7 +1044,7 @@ $.validator.addMethod( "nifES", function( value, element ) {
 		return ( "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 0 ) % 23 ) === value.charAt( 8 ) );
 	}
 
-	// Test specials NIF (starts "/resources/home/ K, L or M)
+	// Test specials NIF (starts with K, L or M)
 	if ( /^[KLM]{1}/.test( value ) ) {
 		return ( value[ 8 ] === "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 1 ) % 23 ) );
 	}
@@ -1105,7 +1105,7 @@ $.validator.addMethod( "nisBR", function( value ) {
 	//Get check number of value
 	cn = parseInt( value.substring( 10, 11 ), 10 );
 
-	//Get number "/resources/home/ 10 digits of the value
+	//Get number with 10 digits of the value
 	number = parseInt( value.substring( 0, 10 ), 10 );
 
 	for ( count = 2; count < 12; count++ ) {
@@ -1166,7 +1166,7 @@ $.validator.addMethod( "pattern", function( value, element, param ) {
 }, "Invalid format." );
 
 /**
- * Dutch phone numbers have 10 digits (or 11 and start "/resources/home/ +31).
+ * Dutch phone numbers have 10 digits (or 11 and start with +31).
  */
 $.validator.addMethod( "phoneNL", function( value, element ) {
 	return this.optional( element ) || /^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)[1-9]((\s|\s?\-\s?)?[0-9]){8}$/.test( value );
@@ -1175,16 +1175,16 @@ $.validator.addMethod( "phoneNL", function( value, element ) {
 /**
  * Polish telephone numbers have 9 digits.
  *
- * Mobile phone numbers starts "/resources/home/ following digits:
+ * Mobile phone numbers starts with following digits:
  * 45, 50, 51, 53, 57, 60, 66, 69, 72, 73, 78, 79, 88.
  *
- * Fixed-line numbers starts "/resources/home/ area codes:
+ * Fixed-line numbers starts with area codes:
  * 12, 13, 14, 15, 16, 17, 18, 22, 23, 24, 25, 29, 32, 33,
  * 34, 41, 42, 43, 44, 46, 48, 52, 54, 55, 56, 58, 59, 61,
  * 62, 63, 65, 67, 68, 71, 74, 75, 76, 77, 81, 82, 83, 84,
  * 85, 86, 87, 89, 91, 94, 95.
  *
- * Ministry of National Defence numbers and VoIP numbers starts "/resources/home/ 26 and 39.
+ * Ministry of National Defence numbers and VoIP numbers starts with 26 and 39.
  *
  * Excludes intelligent networks (premium rate, shared cost, free phone numbers).
  *
@@ -1197,7 +1197,7 @@ $.validator.addMethod( "phonePL", function( phone_number, element ) {
 }, "Please specify a valid phone number" );
 
 /* For UK phone functions, do the following server side processing:
- * Compare original input "/resources/home/ this RegEx pattern:
+ * Compare original input with this RegEx pattern:
  * ^\(?(?:(?:00\)?[\s\-]?\(?|\+)(44)\)?[\s\-]?\(?(?:0\)?[\s\-]?\(?)?|0)([1-9]\d{1,4}\)?[\s\d\-]+)$
  * Extract $1 and set $prefix to '+44<space>' if $1 is '44', otherwise set $prefix to '0'
  * Extract $2 and remove hyphens, spaces and parentheses. Phone number is combined $prefix and $2.
@@ -1213,7 +1213,7 @@ $.validator.addMethod( "phonesUK", function( phone_number, element ) {
 }, "Please specify a valid uk phone number" );
 
 /* For UK phone functions, do the following server side processing:
- * Compare original input "/resources/home/ this RegEx pattern:
+ * Compare original input with this RegEx pattern:
  * ^\(?(?:(?:00\)?[\s\-]?\(?|\+)(44)\)?[\s\-]?\(?(?:0\)?[\s\-]?\(?)?|0)([1-9]\d{1,4}\)?[\s\d\-]+)$
  * Extract $1 and set $prefix to '+44<space>' if $1 is '44', otherwise set $prefix to '0'
  * Extract $2 and remove hyphens, spaces and parentheses. Phone number is combined $prefix and $2.
@@ -1229,7 +1229,7 @@ $.validator.addMethod( "phoneUK", function( phone_number, element ) {
 /**
  * Matches US phone number format
  *
- * where the area code may not start "/resources/home/ 1 and the prefix may not start "/resources/home/ 1
+ * where the area code may not start with 1 and the prefix may not start with 1
  * allows '-' or ' ' as a separator and allows parens around area code
  * some people may want to put a '1' in front of their number
  *
@@ -1428,7 +1428,7 @@ $.validator.addMethod( "stateUS", function( value, element, options ) {
 	return this.optional( element ) || regex.test( value );
 }, "Please specify a valid state" );
 
-// TODO check if value starts "/resources/home/ <, otherwise don't try stripping anything
+// TODO check if value starts with <, otherwise don't try stripping anything
 $.validator.addMethod( "strippedminlength", function( value, element, param ) {
 	return $( value ).text().length >= param;
 }, $.validator.format( "Please enter at least {0} characters" ) );
@@ -1449,7 +1449,7 @@ $.validator.addMethod( "url2", function( value, element ) {
 /**
  * Return true, if the value is a valid vehicle identification number (VIN).
  *
- * Works "/resources/home/ all kind of text inputs.
+ * Works with all kind of text inputs.
  *
  * @example <input type="text" size="20" name="VehicleID" class="{required:true,vinUS:true}" />
  * @desc Declares a required input element whose value must be a valid vehicle identification number.

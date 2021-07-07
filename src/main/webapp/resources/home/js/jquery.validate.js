@@ -596,7 +596,7 @@ $.extend( $.validator, {
 				i;
 			for ( i in obj ) {
 
-				// This check allows counting elements "/resources/home/ empty error
+				// This check allows counting elements with empty error
 				// message as invalid elements
 				if ( obj[ i ] !== undefined && obj[ i ] !== null && obj[ i ] !== false ) {
 					count++;
@@ -629,7 +629,7 @@ $.extend( $.validator, {
 					.filter( ":visible" )
 					.trigger( "focus" )
 
-					// Manually trigger focusin event; "/resources/home/out it, focusin handler isn't called, findLastActive won't have anything to find
+					// Manually trigger focusin event; without it, focusin handler isn't called, findLastActive won't have anything to find
 					.trigger( "focusin" );
 				} catch ( e ) {
 
@@ -673,7 +673,7 @@ $.extend( $.validator, {
 					return false;
 				}
 
-				// Select only the first element for each name, and only those "/resources/home/ rules specified
+				// Select only the first element for each name, and only those with rules specified
 				if ( name in rulesCache || !validator.objectLength( $( this ).rules() ) ) {
 					return false;
 				}
@@ -865,7 +865,7 @@ $.extend( $.validator, {
 		//     parameters: "the given method parameters"
 		// }
 		//
-		// The old behavior still supported, kept to maintain backward compatibility "/resources/home/
+		// The old behavior still supported, kept to maintain backward compatibility with
 		// old code, and will be removed in the next major release.
 		defaultMessage: function( element, rule ) {
 			if ( typeof rule === "string" ) {
@@ -1047,7 +1047,7 @@ $.extend( $.validator, {
 		},
 
 		// See https://api.jquery.com/category/selectors/, for CSS
-		// meta-characters that should be escaped in order to be used "/resources/home/ JQuery
+		// meta-characters that should be escaped in order to be used with JQuery
 		// as a literal part of a name/id or any selector.
 		escapeCssMeta: function( string ) {
 			return string.replace( /([\\!"#$%&'()*+,./:;<=>?@\[\]^`{|}~])/g, "\\$1" );
@@ -1418,7 +1418,7 @@ $.extend( $.validator, {
 
 			// From https://html.spec.whatwg.org/multipage/forms.html#valid-e-mail-address
 			// Retrieved 2014-01-14
-			// If you have a problem "/resources/home/ this implementation, report a bug against the above spec
+			// If you have a problem with this implementation, report a bug against the above spec
 			// Or use custom methods to implement your own email validation
 			return this.optional( element ) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test( value );
 		},
