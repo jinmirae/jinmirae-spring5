@@ -1,43 +1,74 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ include file="../include/header.jsp" %>
 
 <!-- 메인콘텐츠영역 -->
 <div id="container">
     <!-- 메인상단위치표시영역 -->
-	<%@ include file="./board_header.jsp" %>
+    <%@ include file="./board_header.jsp" %>
     <!-- //메인상단위치표시영역 -->
 
     <!-- 메인본문영역 -->
     <div class="bodytext_area box_inner">			
         <ul class="bbsview_list">
-            <li class="bbs_title">박물관 미션 투어 응모 당첨자 발표</li>
-            <li class="bbs_date">작성일 : <span>2018.08.09</span></li>
-            <li class="bbs_hit">조회수 : <span>235</span></li>
+            <li class="bbs_title">${boardVO.title}</li>
+            <li class="bbs_date">작성일 : 
+            <span><fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${boardVO.reg_date}"/></span>
+            </li>
+            <li class="bbs_hit">조회수 : <span>${boardVO.view_count}</span></li>
             <li class="bbs_content">
                 <div class="editer_content">
-                    안녕하세요. 믿을 수 있는 스프링정보, 스프링입니다.<br>
-                    박물관 미션투어에 관심과 참여 감사드립니다. <br>
-                    선정되신 분들도 진심으로 축하드립니다. <br>
-                    앞으로도 큰 관심 부탁드리며, 메일로도 안내 예정이니 참고하시기 바랍니다. <br>
-                    감사합니다. <br><br>
-                    [당첨자]<br>
-                    김용* kimyong***@naver.com <br>
-                    인봉* in2018a***@naver.com<br>
-                    예경* yyhong***@naver.com<br>
-                    한진* haha***@naver.com<br>
-                    박수* pky**@naver.com<br>
-                    명진* mma5**@nate.com<br>
-                    김영* rtfg6*@naver.com<br>
-                    서영* seo20**@gmail.com<br>
-                    윤소* yoon2***@naver.com<br>
-                    지은* ji***@daum.net
+                    ${boardVO.content}
                 </div>
+            </li>
+            <li class="bbs_title" style="height:inherit">첨부파일:
+            <c:forEach begin="0" end="1" var="idx">
+            	<c:if test="${boardVO.real_file_names[idx] != null}">
+            		<c:url var="url" value="/download">
+            			<c:param name="save_file_name" value="${boardVO.save_file_names[idx]}" />
+            			<c:param name="real_file_name" value="${boardVO.real_file_names[idx]}"></c:param>
+            		</c:url>
+            		<!-- 위 처럼 c:url로 쿼리스트링을 처리하면 한글이 인코딩되어서 전송됨 -->
+            		 <a href="${url}">다운로드 
+            		 ${boardVO.real_file_names[idx]}
+            		 </a>
+            		 <!-- 만약 첨부파일이 jpg,jpeg,gif,png,bmp라면 img태그를 사용해서 미리보기 기능추가 -->
+            		 <c:set var="fileNameArray" value="${fn:split(boardVO.save_file_names[idx],'.')}" />
+            		 <c:set var="extName" value="${fileNameArray[fn:length(fileNameArray)-1]}" />
+            		 <c:choose>
+            		 	<c:when test="${fn:containsIgnoreCase(checkImgArray,extName)}">
+            		 	<img alt="다운로드 이미지" style="width:100%;display:block;" src="/image_preview?save_file_name=${boardVO.save_file_names[idx]}">
+            		 	</c:when>
+            		 </c:choose>
+            	</c:if> 
+            </c:forEach>
             </li>
         </ul>
         <p class="btn_line txt_right">
-            <a href="board_list.html" class="btn_bbs">목록</a>
+            <a href="/home/board/board_list?page=${pageVO.page}&search_type=${pageVO.search_type}" class="btn btn-default">목록</a>
+       		<button type="button" id="btn_delete" class="btn btn-danger">삭제</button>
+       		<button type="button" id="btn_update" class="btn btn-warning">수정</button>
         </p>
+        <form name="hide_form" id="hide_form" method="post" action="">
+        	<input type="hidden" name="bno" value="${boardVO.bno}">
+        	<input type="hidden" name="page" value="${pageVO.page}">
+        </form>
+        <script>
+        $(document).ready(function(){
+        	var form = $("hide_form");
+        	$("#btn_delete").click(function(){
+        		if(confirm("정말로 삭제 하시겠습니까?")) {
+					form.attr("action","/home/board/board_delete");
+					form.submit();
+        		}
+        	});
+        	$("#btn_update").click(function(){
+        		alert("수정 준비중입니다.");
+        	});
+        });
+        </script>
         
     </div>
     <!-- //메인본문영역 -->

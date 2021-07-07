@@ -7,6 +7,7 @@
 	<!-- 메인상단위치표시영역 -->
 	<%@ include file="./board_header.jsp" %>
 	<!-- //메인상단위치표시영역 -->
+
 	<!-- 메인본문영역 -->
 	<div class="bodytext_area box_inner">
 		<!-- 폼영역 -->

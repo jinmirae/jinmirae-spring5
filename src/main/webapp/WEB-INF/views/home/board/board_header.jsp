@@ -8,23 +8,6 @@
 <script src="/resources/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE전용CSS코어 임포트 -->
 <link rel="stylesheet" href="/resources/admin/dist/css/adminlte.min.css">
-<style>
-/* 모바일용 댓글 스타일 */
-.row { margin:0px; }
-.timeline, .card-default {
-	text-align: left;
-	margin: 0px 5px;
-}
-.bs-stepper-content {
-	padding: 20px 10px;
-}
-</style>
-<!-- 부트스트랩CSS코어 임포트 -->
-<link rel="stylesheet" href="/resources/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-<!-- 부트스트랩JS코어 임포트 -->
-<script src="/resources/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE전용CSS코어 임포트 -->
-<link rel="stylesheet" href="/resources/admin/dist/css/adminlte.min.css">
 <!-- 첨부파일명을 input태그디자인 안쪽에 집어넣는 확장프로그램 -->
 <script src="/resources/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- 위 첨부파일 확장프로그램 실행(아래-개발자가 처리) -->
@@ -65,14 +48,6 @@
 </script>
 <!-- 게시판용 CSS 임포트 -->
 <link rel="stylesheet" href="/resources/home/css/board.css">
-<!-- 폰트어썸 CSS 임포트 -->
-<link rel="stylesheet" href="/resources/admin/plugins/fontawesome-free/css/all.min.css">
-<!-- 부트스트랩CSS코어 임포트 -->
-<link rel="stylesheet" href="/resources/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-<!-- 부트스트랩JS코어 임포트 -->
-<script src="/resources/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE전용CSS코어 임포트 -->
-<link rel="stylesheet" href="/resources/admin/dist/css/adminlte.min.css">
 <style>
 /* 모바일용 댓글 스타일 */
 .row { margin:0px; }
