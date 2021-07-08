@@ -7,7 +7,7 @@
 /* 메인상단위치표시영역 */
 .location_area {
     height: 260px;
-    background: rgb(212, 144, 41);
+    background: rgb(132,206,253);
 }
 .tit_page {
     padding: 140px 0px 0px 0px;
@@ -95,7 +95,7 @@ input::placeholder { color: #999; } /* IE(Internet Explore)브라우저용 스�
     padding: 0px;
     box-sizing: border-box;
     height: 45px;
-    background: #fef3fa;
+    background: #dae6ff;
 }
 .bbsListTbl td:nth-child(1) { display: none; }
 .bbsListTbl td:nth-child(3) { display: none; }

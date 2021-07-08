@@ -57,7 +57,7 @@
         </form>
         <script>
         $(document).ready(function(){
-        	var form = $("hide_form");
+        	var form = $("#hide_form");
         	$("#btn_delete").click(function(){
         		if(confirm("정말로 삭제 하시겠습니까?")) {
 					form.attr("action","/home/board/board_delete");
@@ -65,7 +65,10 @@
         		}
         	});
         	$("#btn_update").click(function(){
-        		alert("수정 준비중입니다.");
+        		//alert("수정 준비중입니다.");
+        		form.attr("action","/home/board/board_update_form");
+        		form.attr("method","get");
+        		form.submit();
         	});
         });
         </script>
