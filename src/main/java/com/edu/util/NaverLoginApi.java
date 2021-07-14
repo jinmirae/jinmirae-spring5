@@ -13,7 +13,7 @@ public class NaverLoginApi extends DefaultApi20 {
 	@Override
 	protected String getAuthorizationBaseUrl() {
 		// TODO Auto-generated method stub
-		return null;
+		return "https://nid.naver.com/oauth2.0/authorize";
 	}
 
 	//싱클톤 인스트턴스 객체를 생성하기 위해서 인스턴스 홀더 클래스 상수(static,final)변수를 생성합니다.
