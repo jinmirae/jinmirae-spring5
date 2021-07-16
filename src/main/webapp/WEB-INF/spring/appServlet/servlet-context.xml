@@ -38,6 +38,14 @@
 		<beans:property name="order" value="0" />
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	</beans:bean>
+	<!-- 타일즈 설정파일 tiles-context가져오기 -->
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:value>
+			/WEB-INF/spring/tiles-context.xml
+			</beans:value>
+		</beans:property>	
+	</beans:bean>
 	
 	<context:component-scan base-package="com.edu.controller" />
 	<context:component-scan base-package="com.edu.util" />

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./include/header.jsp" %>
 <!-- 게시판용 CSS 임포트 -->
 <link rel="stylesheet" href="/resources/home/css/board.css">
 <!-- html5가 아닌 JS로 유효성 검사 코어 2개 임포트 -->
@@ -120,7 +119,6 @@ $(document).ready(function() {
 </div>
 <!-- //메인콘텐츠영역 -->
 
-<%@ include file="./include/footer.jsp" %>
 <script>
 $(document).ready(function(){
 	$("#user_id_lbl").change(function(){
